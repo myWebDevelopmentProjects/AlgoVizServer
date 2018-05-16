@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema>
+    <main-settings>
+        <main-title>Візуалізація алгоритмів локального сортування BST-дерева</main-title>
+        <methodes-block>
+            <methodes-manually>
+                <button function="addElement()" >Додати елемент</button>
+                <button function="deleteElement()">Видалити елемент</button>
+            </methodes-manually>
+            <methodes-auto-by-order-increase>
+                <button function="addElementByOrderIncrease()">Додати елемент</button>
+                <button function="deleteElementByOrderIncrease()">Видалити елемент</button>
+            </methodes-auto-by-order-increase>
+            <methodes-auto-by-order-decrease>
+                <button function="addElementByOrderDecrease()">Додати елемент</button>
+                <button function="deleteElementByOrderDecrease()">Видалити елемент</button>
+            </methodes-auto-by-order-decrease>
+        </methodes-block>
+        <structure>
+            <type>BST</type>
+            <root value="">
+                <left-node value="">
+                    <left-node value="">
+                        <left-node value="">
+                            <left-node value="">
+                                <left-node value="">
+
+                                </left-node>
+                                <right-node value="">
+
+                                </right-node>
+                            </left-node>
+                            <right-node value="">
+                                <left-node value="">
+
+                                </left-node>
+                                <right-node value="">
+
+                                </right-node>
+                            </right-node>
+                        </left-node>
+                        <right-node value="">
+                            <left-node value="">
+                                <left-node value="">
+
+                                </left-node>
+                                <right-node value="">
+
+                                </right-node>
+                            </left-node>
+                            <right-node value="">
+                                <left-node value="">
+
+                                </left-node>
+                                <right-node value="">
+
+                                </right-node>
+                            </right-node>
+                        </right-node>                     
+                    </left-node>
+                    <right-node value="">
+                        <left-node value="">
+                            <left-node value="">
+                                <left-node value="">
+
+                                </left-node>
+                                <right-node value="">
+
+                                </right-node>
+                            </left-node>
+                            <right-node value="">
+                                <left-node value="">
+
+                                </left-node>
+                                <right-node value="">
+
+                                </right-node>
+                            </right-node>
+                        </left-node>
+                        <right-node value="">
+                            <left-node value="">
+                                <left-node value="">
+
+                                </left-node>
+                                <right-node value="">
+
+                                </right-node>
+                            </left-node>
+                            <right-node value="">
+                                <left-node value="">
+
+                                </left-node>
+                                <right-node value="">
+
+                                </right-node>
+                            </right-node>
+                        </right-node>
+                    </right-node> 
+                </left-node>
+                <right-node value="">
+                    <left-node value="">
+                        <left-node value="">
+
+                        </left-node>
+                        <right-node value="">
+
+                        </right-node>                    
+                    </left-node>
+                    <right-node value="">
+                        <left-node value="">
+
+                        </left-node>
+                        <right-node value="">
+
+                        </right-node>
+                    </right-node>                     
+                </right-node>                
+            </root>
+	</structure>
+	<functions-block>
+            <button function="balancingRandomization()">Рандомізація</button>
+            <button function="balancingDepreciation()">Амортизація</button>			
+            <button function="balancingOptimization()">Оптимізація</button>
+	</functions-block>
+    </main-settings>
+    <pseudocode id="Insert_Root_Splay">
+        <!--
+        Insert_Root_Splay(Current, New_Elem)
+	if Current = NULL then 
+		return  New_Elem
+		##влево-влево
+	if data(New_Elem) < data(Current) then 
+		if left(Current) = NULL  then 
+			left(Current) <- New_Elem 
+			Current <- call Rotation_R(Current)
+		else 
+			if data(New_Elem) < data(left(Current)) then 		
+				left(left(Current)) <- call Insert_Root_Splay(left(left(Current)), New_Elem) 
+				Current <- call Rotation_R(Current) 
+			else
+				right(left(Current)) <- call Insert_Root_Splay(right(left(Current)), New_Elem) 
+				left(Current)  ¬ call  Rotation_L(left(Current)) 
+			Current  ¬ call Rotation_R(Current)
+	else 
+		if right(Current) = NULL  then 
+			right(Current) <- New_Elem 
+			Current <- call  Rotation_L(Current)
+		else ##вправо-влево
+			left(right(Current)) <- call Insert_Root_Splay(left(right(Current)), New_Elem) 
+			right(Current) <- call Rotation_R(right(Current)) 
+			Current <- call Rotation_L(Current) 
+	return Current 
+        -->
+    </pseudocode>
+</schema>

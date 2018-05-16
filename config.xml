@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <links>
+        <bst_non_balancing_add>Додавання елемента без балансування</bst_non_balancing_add>
+        <bst_local_balancing_random>Локальне балансування BST :: РАНДОМИЗАЦИЯ</bst_local_balancing_random>
+        <bst_local_balancing_amortization>Локальне балансування BST :: АМОРТИЗАЦІЯ</bst_local_balancing_amortization>
+        <bst_local_balancing_optimization>Локальне балансування BST :: ОПТИМІЗАЦІЯ</bst_local_balancing_optimization>
+    </links>
+</root>
