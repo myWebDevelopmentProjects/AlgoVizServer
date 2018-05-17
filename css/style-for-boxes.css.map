@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;KACM;EACF,OAAO,EAAE,KAAK;EACd,cAAc,EAAE,SAAS;EACzB,WAAW,EAAE,IAAI;EACjB,MAAM,EAAE,iBAAiB;EACzB,OAAO,EAAE,KAAK;EACd,aAAa,EAAE,KAAK;EACpB,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,KAAK",
+"sources": ["../scss/style-for-boxes.scss"],
+"names": [],
+"file": "style-for-boxes.css"
+}
