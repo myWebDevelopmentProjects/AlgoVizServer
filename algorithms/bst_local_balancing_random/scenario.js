@@ -8,6 +8,9 @@
     window.app = {
         init: function(){
             console.log("init app decrease");
+            $("back-btn").on("click", function(){
+                window.location.assign('/');
+            });
             $.ajax({
                 type: "GET",
                 url: "schema.xml",

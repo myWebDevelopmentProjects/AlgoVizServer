@@ -1,5 +1,7 @@
 back-btn,
-title {
+title-block,
+data-structure,
+comments-block{
     display: block;
     text-transform: uppercase;
     font-weight: bold;
@@ -8,4 +10,17 @@ title {
     border-radius: .4rem;
     text-align: center;
     margin: .2rem;
+}
+double-arrow-right {
+    display: block;
+    background: url(../images/svg/double-arrow-right.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+arrow-down {
+    display: block;
+    background: url(../images/svg/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
 }

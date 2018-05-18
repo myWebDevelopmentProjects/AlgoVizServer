@@ -1,10 +1,12 @@
-
 * {
     margin: 0;
     border: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    audio {
+        width: 100%;
+    }
 }
 body {
     background: #848383;
@@ -23,17 +25,79 @@ body {
             align-items: center;
             justify-content: center;
             back-btn {
+                display: flex;
+                align-items: center;
+                justify-content: baseline;
                 width: 30%;
                 text-align: center;
                 cursor: pointer;
                 background: linear-gradient(#92c83d, #d5df23);
+                double-arrow-right {
+                    width: 10%;
+                    height: 1rem;
+                }
+                span {
+                    width: 90%;
+                    text-align: center;
+                }
             }
-            title {
+            title-block {
                 width:70%;
                 color: white;
                 background: linear-gradient(#37b44a, #029345);
+
             }
-            
+        }
+        view-middle {
+            display: flex;
+            align-items: top;
+            justify-content: center;
+            data-structure {
+                height: 22rem;
+                background: white;
+                padding: 0;
+                width: 70%;
+                title-block {
+                    display: flex;
+                    align-items: center;
+                    justify-content: baseline;
+                    margin: 0;
+                    border-top:0;
+                    border-right: 0;
+                    border-left:0;
+                    background: linear-gradient(#92c83d, #d5df23);
+                    arrow-down {
+                        width: 10%;
+                        height: 1rem;
+                    }
+                    span {
+                        width: 90%;
+                        text-align: center;
+                    }
+                }
+                active-field {
+
+                }
+            }
+            description-block {
+                width: 30%;
+                comments-block {
+                    height: 115px;
+                    background: white;
+                    padding: 0;
+
+                    title-block {
+                        margin: 0;
+                        border-top:0;
+                        border-right: 0;
+                        border-left:0;
+                        background: linear-gradient(#92c83d, #d5df23);
+                    }
+                    active-field {
+
+                    }
+                }
+            }
         }
     }
 }

@@ -4,6 +4,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif; }
+  * audio {
+    width: 100%; }
 
 body {
   background: #848383;
@@ -17,7 +19,9 @@ body {
     margin: 1rem auto;
     border-radius: 10px; }
     body content-view back-btn,
-    body content-view title {
+    body content-view title-block,
+    body content-view data-structure,
+    body content-view comments-block {
       display: block;
       text-transform: uppercase;
       font-weight: bold;
@@ -26,18 +30,73 @@ body {
       border-radius: .4rem;
       text-align: center;
       margin: .2rem; }
+    body content-view double-arrow-right {
+      display: block;
+      background: url(../images/svg/double-arrow-right.svg);
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view arrow-down {
+      display: block;
+      background: url(../images/svg/arrow-down.svg);
+      background-repeat: no-repeat;
+      background-size: contain; }
     body content-view view-header {
       display: flex;
       align-items: center;
       justify-content: center; }
       body content-view view-header back-btn {
+        display: flex;
+        align-items: center;
+        justify-content: baseline;
         width: 30%;
         text-align: center;
         cursor: pointer;
         background: linear-gradient(#92c83d, #d5df23); }
-      body content-view view-header title {
+        body content-view view-header back-btn double-arrow-right {
+          width: 10%;
+          height: 1rem; }
+        body content-view view-header back-btn span {
+          width: 90%;
+          text-align: center; }
+      body content-view view-header title-block {
         width: 70%;
         color: white;
         background: linear-gradient(#37b44a, #029345); }
+    body content-view view-middle {
+      display: flex;
+      align-items: top;
+      justify-content: center; }
+      body content-view view-middle data-structure {
+        height: 22rem;
+        background: white;
+        padding: 0;
+        width: 70%; }
+        body content-view view-middle data-structure title-block {
+          display: flex;
+          align-items: center;
+          justify-content: baseline;
+          margin: 0;
+          border-top: 0;
+          border-right: 0;
+          border-left: 0;
+          background: linear-gradient(#92c83d, #d5df23); }
+          body content-view view-middle data-structure title-block arrow-down {
+            width: 10%;
+            height: 1rem; }
+          body content-view view-middle data-structure title-block span {
+            width: 90%;
+            text-align: center; }
+      body content-view view-middle description-block {
+        width: 30%; }
+        body content-view view-middle description-block comments-block {
+          height: 115px;
+          background: white;
+          padding: 0; }
+          body content-view view-middle description-block comments-block title-block {
+            margin: 0;
+            border-top: 0;
+            border-right: 0;
+            border-left: 0;
+            background: linear-gradient(#92c83d, #d5df23); }
 
 /*# sourceMappingURL=main.css.map */

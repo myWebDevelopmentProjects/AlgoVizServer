@@ -1,22 +1,27 @@
-(function(){
+(function () {
     if (!window.app) {
         window.app = {};
     }
 })();
 
-(function(){
+(function () {
     window.app = {
-        init: function(){
+        init: function () {
             console.log("init app decrease");
+            
+            $("back-btn").on("click", function () {
+                window.location.assign("/AlgoVizServer");
+            });
+            
             $.ajax({
                 type: "GET",
                 url: "schema.xml",
                 dataType: "xml",
-                success: function (xml) { 
+                success: function (xml) {
                     console.log($(xml).find("schema").find("structure").find("type").text());
                 },
-                error: function(response){
-                    throw new Error("ERR :: no file found!"); 
+                error: function (response) {
+                    throw new Error("ERR :: no file found!");
                 }
             });
         }
@@ -24,7 +29,7 @@
 })();
 
 //
-$(document).ready(function() {
+$(document).ready(function () {
     app.init();
 });
 
