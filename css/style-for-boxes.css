@@ -1,7 +1,10 @@
+help-btn,
 back-btn,
 title-block,
 data-structure,
-comments-block {
+data-pseudocode,
+comments-block,
+procedures-block {
   display: block;
   text-transform: uppercase;
   font-weight: bold;
@@ -20,6 +23,12 @@ double-arrow-right {
 arrow-down {
   display: block;
   background: url(../images/svg/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+help-sign {
+  display: block;
+  background: url(../images/svg/help-sign.svg);
   background-repeat: no-repeat;
   background-size: contain; }
 

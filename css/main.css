@@ -12,16 +12,19 @@ body {
   font-size: 1em; }
   body content-view {
     display: block;
-    padding: 1rem;
+    padding: .5rem;
     width: 1024px;
     height: 768px;
     background: #c4c4c4;
     margin: 1rem auto;
     border-radius: 10px; }
+    body content-view help-btn,
     body content-view back-btn,
     body content-view title-block,
     body content-view data-structure,
-    body content-view comments-block {
+    body content-view data-pseudocode,
+    body content-view comments-block,
+    body content-view procedures-block {
       display: block;
       text-transform: uppercase;
       font-weight: bold;
@@ -40,6 +43,11 @@ body {
       background: url(../images/svg/arrow-down.svg);
       background-repeat: no-repeat;
       background-size: contain; }
+    body content-view help-sign {
+      display: block;
+      background: url(../images/svg/help-sign.svg);
+      background-repeat: no-repeat;
+      background-size: contain; }
     body content-view view-header {
       display: flex;
       align-items: center;
@@ -47,7 +55,7 @@ body {
       body content-view view-header back-btn {
         display: flex;
         align-items: center;
-        justify-content: baseline;
+        justify-content: space-between;
         width: 30%;
         text-align: center;
         cursor: pointer;
@@ -62,41 +70,96 @@ body {
         width: 70%;
         color: white;
         background: linear-gradient(#37b44a, #029345); }
-    body content-view view-middle {
+    body content-view view-row {
       display: flex;
-      align-items: top;
+      width: 100%;
+      align-items: flex-start;
       justify-content: center; }
-      body content-view view-middle data-structure {
+      body content-view view-row data-structure {
         height: 22rem;
         background: white;
         padding: 0;
         width: 70%; }
-        body content-view view-middle data-structure title-block {
+        body content-view view-row data-structure title-block {
           display: flex;
           align-items: center;
-          justify-content: baseline;
+          justify-content: space-between;
           margin: 0;
           border-top: 0;
           border-right: 0;
           border-left: 0;
           background: linear-gradient(#92c83d, #d5df23); }
-          body content-view view-middle data-structure title-block arrow-down {
+          body content-view view-row data-structure title-block arrow-down {
             width: 10%;
             height: 1rem; }
-          body content-view view-middle data-structure title-block span {
+          body content-view view-row data-structure title-block span {
             width: 90%;
             text-align: center; }
-      body content-view view-middle description-block {
+      body content-view view-row right-block {
         width: 30%; }
-        body content-view view-middle description-block comments-block {
+        body content-view view-row right-block comments-block {
           height: 115px;
           background: white;
-          padding: 0; }
-          body content-view view-middle description-block comments-block title-block {
+          padding: 0;
+          width: 100%; }
+          body content-view view-row right-block comments-block title-block {
             margin: 0;
             border-top: 0;
             border-right: 0;
             border-left: 0;
             background: linear-gradient(#92c83d, #d5df23); }
+        body content-view view-row right-block procedures-block {
+          height: 17em;
+          background: white;
+          padding: 0;
+          width: 100%; }
+          body content-view view-row right-block procedures-block title-block {
+            margin: 0;
+            border-top: 0;
+            border-right: 0;
+            border-left: 0;
+            background: linear-gradient(#92c83d, #d5df23); }
+          body content-view view-row right-block procedures-block active-field {
+            overflow-y: scroll; }
+      body content-view view-row data-pseudocode {
+        height: 17rem;
+        background: white;
+        padding: 0;
+        width: 70%; }
+        body content-view view-row data-pseudocode title-block {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 0;
+          border-top: 0;
+          border-right: 0;
+          border-left: 0;
+          background: linear-gradient(#92c83d, #d5df23); }
+          body content-view view-row data-pseudocode title-block arrow-down {
+            width: 10%;
+            height: 1rem; }
+          body content-view view-row data-pseudocode title-block span {
+            width: 90%;
+            text-align: center; }
+        body content-view view-row data-pseudocode active-field {
+          overflow-y: scroll; }
+      body content-view view-row help-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 15%;
+        text-align: center;
+        cursor: pointer;
+        background: linear-gradient(#92c83d, #d5df23); }
+        body content-view view-row help-btn help-sign {
+          width: 10%;
+          height: 1rem; }
+        body content-view view-row help-btn span {
+          width: 90%;
+          text-align: center; }
+    body content-view view-footer {
+      display: block; }
+      body content-view view-footer p {
+        font-size: .8rem; }
 
 /*# sourceMappingURL=main.css.map */
