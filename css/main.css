@@ -24,7 +24,8 @@ body {
     body content-view data-structure,
     body content-view data-pseudocode,
     body content-view comments-block,
-    body content-view procedures-block {
+    body content-view procedures-block,
+    body content-view control-btn {
       display: block;
       text-transform: uppercase;
       font-weight: bold;
@@ -33,6 +34,10 @@ body {
       border-radius: .4rem;
       text-align: center;
       margin: .2rem; }
+    body content-view active-field {
+      display: block;
+      overflow-y: scroll;
+      word-wrap: break-word; }
     body content-view double-arrow-right {
       display: block;
       background: url(../images/svg/double-arrow-right.svg);
@@ -43,9 +48,34 @@ body {
       background: url(../images/svg/arrow-down.svg);
       background-repeat: no-repeat;
       background-size: contain; }
-    body content-view help-sign {
+    body content-view help-btn-icon {
       display: block;
-      background: url(../images/svg/help-sign.svg);
+      background: url(../images/svg/help-btn-icon.svg);
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view .start > control-icon {
+      background: url(../images/svg/start-btn-icon.svg);
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view .back > control-icon {
+      background: url(../images/svg/back-btn-icon.svg);
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view .pause > control-icon {
+      background: url(../images/svg/pause-btn-icon.svg);
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view .forward > control-icon {
+      background: url(../images/svg/forward-btn-icon.svg);
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view .stop > control-icon {
+      background: url(../images/svg/stop-btn-icon.svg);
+      display: block;
       background-repeat: no-repeat;
       background-size: contain; }
     body content-view view-header {
@@ -98,7 +128,7 @@ body {
       body content-view view-row right-block {
         width: 30%; }
         body content-view view-row right-block comments-block {
-          height: 115px;
+          height: 17rem;
           background: white;
           padding: 0;
           width: 100%; }
@@ -112,7 +142,7 @@ body {
           height: 17em;
           background: white;
           padding: 0;
-          width: 100%; }
+          width: 98%; }
           body content-view view-row right-block procedures-block title-block {
             margin: 0;
             border-top: 0;
@@ -151,12 +181,28 @@ body {
         text-align: center;
         cursor: pointer;
         background: linear-gradient(#92c83d, #d5df23); }
-        body content-view view-row help-btn help-sign {
+        body content-view view-row help-btn help-btn-icon {
           width: 10%;
           height: 1rem; }
         body content-view view-row help-btn span {
           width: 90%;
           text-align: center; }
+      body content-view view-row control-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 12%;
+        color: white;
+        cursor: pointer;
+        background: linear-gradient(#29a1db, #2e3e9a); }
+        body content-view view-row control-btn control-icon {
+          width: 10%;
+          height: 1rem;
+          width: 1rem;
+          margin: 0 .3rem 0 .2rem; }
+        body content-view view-row control-btn start-control-icon {
+          width: 10%;
+          height: 1rem; }
     body content-view view-footer {
       display: block; }
       body content-view view-footer p {

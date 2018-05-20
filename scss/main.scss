@@ -83,7 +83,7 @@ body {
             right-block {
                 width: 30%;
                 comments-block {
-                    height: 115px;
+                    height: 17rem;
                     background: white;
                     padding: 0;
                     width: 100%;
@@ -102,7 +102,7 @@ body {
                     height: 17em;
                     background: white;
                     padding: 0;
-                    width: 100%;
+                    width: 98%;
                     title-block {
                         margin: 0;
                         border-top:0;
@@ -152,13 +152,32 @@ body {
                 text-align: center;
                 cursor: pointer;
                 background: linear-gradient(#92c83d, #d5df23);
-                help-sign {
+                help-btn-icon {
                     width: 10%;
                     height: 1rem;
                 }
                 span {
                     width: 90%;
                     text-align: center;
+                }
+            }
+            control-btn {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 12%;
+                color: white;
+                cursor: pointer;
+                background: linear-gradient(#29a1db, #2e3e9a);    
+                control-icon {
+                    width: 10%;
+                    height: 1rem; 
+                    width: 1rem;
+                    margin: 0 .3rem 0 .2rem;
+                }
+                start-control-icon {
+                    width: 10%;
+                    height: 1rem; 
                 }
             }
         }

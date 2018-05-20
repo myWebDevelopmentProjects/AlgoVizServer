@@ -4,7 +4,8 @@ title-block,
 data-structure,
 data-pseudocode,
 comments-block,
-procedures-block {
+procedures-block,
+control-btn {
     display: block;
     text-transform: uppercase;
     font-weight: bold;
@@ -13,6 +14,12 @@ procedures-block {
     border-radius: .4rem;
     text-align: center;
     margin: .2rem;
+}
+
+active-field {
+    display: block;
+    overflow-y: scroll;
+    word-wrap: break-word;
 }
 
 double-arrow-right {
@@ -28,9 +35,45 @@ arrow-down {
     background-repeat: no-repeat;
     background-size: contain;
 }
-help-sign {
+
+help-btn-icon {
     display: block;
-    background: url(../images/svg/help-sign.svg);
+    background: url(../images/svg/help-btn-icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.start > control-icon {
+    background: url(../images/svg/start-btn-icon.svg);
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.back > control-icon {
+    background: url(../images/svg/back-btn-icon.svg);
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.pause > control-icon {
+    background: url(../images/svg/pause-btn-icon.svg);
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.forward > control-icon {
+    background: url(../images/svg/forward-btn-icon.svg);
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.stop > control-icon {
+    background: url(../images/svg/stop-btn-icon.svg);
+    display: block;
     background-repeat: no-repeat;
     background-size: contain;
 }
