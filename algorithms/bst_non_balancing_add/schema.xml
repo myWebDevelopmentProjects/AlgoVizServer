@@ -116,40 +116,124 @@
                     </right-node>                     
                 </right-node>                
             </root>
-	</structure>
-	<functions-block>
+        </structure>
+        <functions-block>
             <button function="balancingRandomization()">Рандомізація</button>
             <button function="balancingDepreciation()">Амортизація</button>			
             <button function="balancingOptimization()">Оптимізація</button>
-	</functions-block>
+        </functions-block>
     </main-settings>
-    <pseudocode id="Insert_Root_Splay">
-        <!--
-        Insert_Root_Splay(Current, New_Elem)
-	if Current = NULL then 
-		return  New_Elem
-		##влево-влево
-	if data(New_Elem) < data(Current) then 
-		if left(Current) = NULL  then 
-			left(Current) <- New_Elem 
-			Current <- call Rotation_R(Current)
-		else 
-			if data(New_Elem) < data(left(Current)) then 		
-				left(left(Current)) <- call Insert_Root_Splay(left(left(Current)), New_Elem) 
-				Current <- call Rotation_R(Current) 
-			else
-				right(left(Current)) <- call Insert_Root_Splay(right(left(Current)), New_Elem) 
-				left(Current)  ¬ call  Rotation_L(left(Current)) 
-			Current  ¬ call Rotation_R(Current)
-	else 
-		if right(Current) = NULL  then 
-			right(Current) <- New_Elem 
-			Current <- call  Rotation_L(Current)
-		else ##вправо-влево
-			left(right(Current)) <- call Insert_Root_Splay(left(right(Current)), New_Elem) 
-			right(Current) <- call Rotation_R(right(Current)) 
-			Current <- call Rotation_L(Current) 
-	return Current 
-        -->
-    </pseudocode>
+    <procedure init="true" id="Insert_BST" arguments="(Root, Object)">
+        <instruction>
+            <comment-text>Метод добавления нового элемента в BST-дерево</comment-text>
+            <comment-sound url=""/>
+            <code><![CDATA[ New_Elem <- call new Node(Object) ]]></code>
+        </instruction>
+        <instruction>
+            <comment>Метод добавления нового элемента в BST-дерево</comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ Root <- call Insert_Node(Root, New_Elem) ]]></code>
+        </instruction>
+    </procedure>
+    <procedure id="Insert_Node" arguments="(Current,  New_Elem)">
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ if Current = NULL then ]]></code>
+        </instruction>
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ return  New_Elem ]]></code>
+        </instruction>
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ if data(New_Elem) < data(Current) then ]]></code>
+        </instruction> 
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ left(Current) <- call Insert_Node(left(Current), New_Elem) ]]></code>
+        </instruction> 
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ Current <- call Rotation_R(Current) <br/> else ]]></code>
+        </instruction>  
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ right(Current) <- call Insert_Node(right(Current), New_Elem) ]]></code>
+        </instruction>         
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ Current <- call Rotation_L(Current) ]]></code>
+        </instruction>
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ return Current ]]></code>
+        </instruction>                                      
+    </procedure> 
+    <procedure id="Rotation_R" arguments="(Current)">
+        <instruction>
+            <comment>Метод – ротация вправо</comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ Temp <- left(Current) ]]></code>
+        </instruction>   
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ left(Current) <- right(Temp) ]]></code>
+        </instruction> 
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ right(Temp) <- Current ]]></code>
+        </instruction>   
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ Current <- Temp  ]]></code>
+        </instruction>  
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ return Current   ]]></code>
+        </instruction>                                   
+    </procedure> 
+    <procedure id="Rotation_L" arguments="(Current)">
+        <instruction>
+            <comment>Метод – ротация влево</comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ Temp <- right(Current) ]]></code>
+        </instruction> 
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ Temp <- right(Current) ]]></code>
+        </instruction>    
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ right(Current) <- left(Temp) ]]></code>
+        </instruction>   
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ left(Temp) <- Current ]]></code>
+        </instruction>  
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ Current <- Temp ]]></code>
+        </instruction> 
+        <instruction>
+            <comment></comment>
+            <comment-sound url=""/>
+            <code><![CDATA[ return Current ]]></code>
+        </instruction>                                     
+    </procedure>   
 </schema>
