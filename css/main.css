@@ -171,6 +171,8 @@ body {
           body content-view view-row data-pseudocode title-block span {
             width: 90%;
             text-align: center; }
+            body content-view view-row data-pseudocode title-block span .js_procedure_name {
+              text-transform: none; }
         body content-view view-row data-pseudocode active-field {
           overflow-y: scroll; }
       body content-view view-row help-btn {
@@ -195,6 +197,9 @@ body {
         color: white;
         cursor: pointer;
         background: linear-gradient(#29a1db, #2e3e9a); }
+        body content-view view-row control-btn span {
+          width: 90%;
+          text-align: center; }
         body content-view view-row control-btn control-icon {
           width: 10%;
           height: 1rem;

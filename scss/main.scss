@@ -138,6 +138,9 @@ body {
                     span {
                         width: 90%;
                         text-align: center;
+                        .js_procedure_name {
+                            text-transform: none;
+                        }
                     }
                 }
                 active-field {
@@ -169,6 +172,10 @@ body {
                 color: white;
                 cursor: pointer;
                 background: linear-gradient(#29a1db, #2e3e9a);    
+                span {
+                    width: 90%;
+                    text-align: center;
+                }
                 control-icon {
                     width: 10%;
                     height: 1rem; 

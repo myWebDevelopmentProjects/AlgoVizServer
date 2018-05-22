@@ -26,7 +26,7 @@
     <view-row>
         
         <data-pseudocode>
-            <title-block><arrow-down>&nbsp;</arrow-down><span>НАЗВА виконуваної процедури</span></title-block>
+            <title-block><arrow-down>&nbsp;</arrow-down><span>Виконувана процедура&nbsp;::&nbsp;<span class="js_procedure_name"></span></span></title-block>
             <active-field>
 
             </active-field>

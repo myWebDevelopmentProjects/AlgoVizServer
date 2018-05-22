@@ -8,7 +8,8 @@
         <link rel="stylesheet" type="text/css" href="/AlgoVizServer/css/main.css" >
         <script src="/AlgoVizServer/js/jquery/jquery-3.3.1.min.js"></script>
         <script src="/AlgoVizServer/js/jquery/jquery-ui.min.js"></script>
+        <script src="/AlgoVizServer/js/main.js"></script>
     </head>
     <body>
-
+        <div class="js_error">DEFAULT</div>
 
