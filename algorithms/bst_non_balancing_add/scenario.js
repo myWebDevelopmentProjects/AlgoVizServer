@@ -21,11 +21,15 @@ function Instruction(code, commentText, commentSound) {
         var code = "<ol>";
         console.log(procedure);
         // Виведення всіх рядків псевдокоду даної процедури
-        code += "<li>" + procedure.instructions[0].code + "</li";
+        var i = 0, max = procedure.instructions.length;
+        while(i < max) {
+            code += "<li>" + procedure.instructions[i].code + "</li>";
+            i++;
+        }
         code += "</ol>";
         console.log(code);
-            $("data-pseudocode active-field").html(code);
-            
+        $("data-pseudocode active-field").html(code);
+
     }
     //
     window.app.init = {
@@ -46,14 +50,14 @@ function Instruction(code, commentText, commentSound) {
                     var $procedure = $(xml).find("schema").find("procedure");
                     if ($procedure.length > 0) {
                         self.parseProcedures($procedure);
-                        app.errorHandler("Нема процедур!");
+                        app.errorHandler("є процедур!");
                     } else {
                         app.errorHandler("Нема процедур!");
                     }
 
                 },
                 error: function (response) {
-                     throw new Error("ERR :: no file found!");
+                    throw new Error("ERR :: no file found!");
                 }
             });
         },
@@ -70,44 +74,30 @@ function Instruction(code, commentText, commentSound) {
         },
         parseProcedures: function ($procedure) {
             var self = this;
-            var i = 0;
-            var max = $procedure.length;
-            while (i < max) {
-                console.log($procedure[i].attributes);
+            $procedure.each(function () {
                 try {
                     //
-                    var id = typeof $procedure[i].attributes.id !== "undefined" ?
-                            $procedure[i].attributes.id.nodeValue : "empty";
-                    var init = typeof $procedure[i].attributes.init !== "undefined" ?
-                            $procedure[i].attributes.init.nodeValue : "empty";
-                    var args = typeof $procedure[i].attributes.args !== "undefined" ?
-                            $procedure[i].attributes.args.nodeValue : "empty";
+                    var id = typeof $(this).attr("id") !== "undefined" ? $(this).attr("id") : "empty";
+                    var init = typeof $(this).attr("init") !== "undefined" ? $(this).attr("init") : "empty";
+                    var args = typeof $(this).attr("args") !== "undefined" ? $(this).attr("args") : "empty";
                     var procedure = new Procedure(id, init, args);
+                    // додавання нової процедури до алгоритму
+                    app.procedures.push(procedure); 
                     //
-                    var j = 0;
-                    var $instructions = $procedure[i].getElementsByTagName("instruction");
-                    console.log("find", $procedure[i].find("instruction"));
-                    var maxElems = $instructions.length;
-                    while (j < maxElems) {
-                        var commentText =
-                                typeof $instructions[j].getElementsByTagName("comment-text")[0] !== "undefined" ?
-                                $instructions[j].getElementsByTagName("comment-text")[0].innerHTML : "empty";
-                        var commentSound =
-                                typeof $instructions[j].getElementsByTagName("comment-sound")[0] !== "undefined" ?
-                                $instructions[j].getElementsByTagName("comment-sound")[0].innerHTML : "empty";
-                        var codePart =
-                                typeof $instructions[j].getElementsByTagName("code")[0] ?
-                                $instructions[j].getElementsByTagName("code")[0].innerHTML : "empty";
-                        procedure.instructions.push(new Instruction(codePart, commentText, commentSound));
-                        j++;
-                    }
-                    app.procedures.push(procedure);
+                    var $instructions = $(this).find("instruction");
+                    $instructions.each(function(){
+                        var commentText = typeof $(this).find("comment-text") !== "undefined" ? $(this).find("comment-text").text() : "empty";
+                        var commentSound = typeof $(this).find("comment-sound") !== "undefined" ? $(this).find("comment-sound").text() : "empty";
+                        var codePart = typeof $(this).find("code") ? $(this).find("code").text() : "empty";
+                        app.procedures[app.procedures.length - 1].instructions.push(new Instruction(codePart, commentText, commentSound));
+                    });
                 } catch (error) {
                     app.errorHandler("ERR :: " + error);
-                    throw new Error("ERR :: " + error)
+                    throw new Error("ERR :: " + error);
                 }
-                i++;
-            }
+            });
+            // після завершення проходу по тсрутутрах процедур перехід до відображення початкової 
+            // процедури алгоритму
             this.initProcedureDisplay();
         }
     };

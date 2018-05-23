@@ -167,14 +167,33 @@ body {
           background: linear-gradient(#92c83d, #d5df23); }
           body content-view view-row data-pseudocode title-block arrow-down {
             width: 10%;
-            height: 1rem; }
+            height: 1px; }
           body content-view view-row data-pseudocode title-block span {
             width: 90%;
             text-align: center; }
             body content-view view-row data-pseudocode title-block span .js_procedure_name {
               text-transform: none; }
         body content-view view-row data-pseudocode active-field {
-          overflow-y: scroll; }
+          height: 210px;
+          overflow-y: scroll;
+          text-align: left;
+          text-transform: none; }
+          body content-view view-row data-pseudocode active-field ol {
+            list-style: none;
+            padding: 3px; }
+            body content-view view-row data-pseudocode active-field ol li::before {
+              content: counter(li);
+              color: black;
+              display: inline-block;
+              width: 1.3em;
+              margin: 0 1em 0 0;
+              background: no-repeat url("../images/svg/code_part_li.svg");
+              background-size: contain;
+              text-align: center;
+              font-weight: bold; }
+            body content-view view-row data-pseudocode active-field ol li {
+              counter-increment: li;
+              margin: 0 0 .5em 0; }
       body content-view view-row help-btn {
         display: flex;
         align-items: center;
