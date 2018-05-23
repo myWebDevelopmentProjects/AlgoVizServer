@@ -1,8 +1,8 @@
 //
 
-var Procedure = function (name, init, args) {
+var Procedure = function (name, current, args) {
     this.name = name;
-    this.init = init;
+    this.current = current;
     this.args = args;
     this.instructions = [];
 }
@@ -40,7 +40,12 @@ function Instruction(code, commentText, commentAudio) {
         // self.element.audioComment.attr("src", procedure.instructions[0].commentAudio);
     };
     //
-    window.app.init = {
+    app.start = function(){
+        var self = this;
+       console.log(this.procedures);
+    }
+    //
+    app.init = {
         start: function () {
             var self = this;
             //
@@ -54,6 +59,7 @@ function Instruction(code, commentText, commentAudio) {
                     console.log($(xml).find("schema").find("structure").find("type").text());
                     var $procedure = $(xml).find("schema").find("procedure");
                     if ($procedure.length > 0) {
+                        console.log($procedure.find("instruction"));
                         self.parseProcedures($procedure);
                         app.errorHandler("є процедур!");
                     } else {
@@ -69,7 +75,7 @@ function Instruction(code, commentText, commentAudio) {
             var self = this;
             var procedureList = "<ul>";
             for (var procedure in app.procedures) {
-                if (app.procedures[procedure].hasOwnProperty("init") && app.procedures[procedure].init === "true") {
+                if (app.procedures[procedure].hasOwnProperty("current") && app.procedures[procedure].current === "true") {
                     var currentProcedre = app.procedures[procedure];
                     // Виведення назви початкової процедури
                     $(".js_procedure_name").html(currentProcedre.name + currentProcedre.args);
@@ -79,8 +85,23 @@ function Instruction(code, commentText, commentAudio) {
             }
             procedureList += "</ul>";
             app.element.procedures.html(procedureList);
-            app.element.procedures.find("li:nth-child(1)").addClass("active");
-
+            app.element.procedures.find("li:nth-child(1)").addClass("current");
+        },
+        makeProcedureCurrent: function(procedure){
+            var self = this;
+            var procedureList = "<ul>";
+            for (var procedure in app.procedures) {
+                if (app.procedures[procedure].hasOwnProperty("current") && app.procedures[procedure].current === "true") {
+                    var currentProcedre = app.procedures[procedure];
+                    // Виведення назви початкової процедури
+                    $(".js_procedure_name").html(currentProcedre.name + currentProcedre.args);
+                    app.updatePseudocodeField(currentProcedre);
+                }
+                procedureList += "<li><span>"+ app.procedures[procedure].name +"</span></li>";
+            }
+            procedureList += "</ul>";
+            app.element.procedures.html(procedureList);
+            app.element.procedures.find("li:nth-child(1)").addClass("current");
         },
         parseProcedures: function ($procedure) {
             var self = this;
@@ -88,9 +109,9 @@ function Instruction(code, commentText, commentAudio) {
                 try {
                     //
                     var id = typeof $(this).attr("id") !== "undefined" ? $(this).attr("id") : "empty";
-                    var init = typeof $(this).attr("init") !== "undefined" ? $(this).attr("init") : "empty";
+                    var current = typeof $(this).attr("current") !== "undefined" ? $(this).attr("current") : "empty";
                     var args = typeof $(this).attr("args") !== "undefined" ? $(this).attr("args") : "empty";
-                    var procedure = new Procedure(id, init, args);
+                    var procedure = new Procedure(id, current, args);
                     // додавання нової процедури до алгоритму
                     app.procedures.push(procedure); 
                     //
@@ -120,6 +141,10 @@ $(document).ready(function () {
     // ініціалізація подій для елементів сторінки
     $("back-btn").on("click", function () {
         window.location.assign("/AlgoVizServer");
+    });
+
+    $("control-btn.start").on("click", function(){
+        app.start();
     });
 });
 

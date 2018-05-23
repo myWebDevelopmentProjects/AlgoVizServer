@@ -1,18 +1,21 @@
 <?php include_once dirname(__FILE__) . '../../../html-templates/header.php'; ?>
 <content-view>
     <view-header>
-        <back-btn><double-arrow-right>&nbsp;</double-arrow-right><span>Повернутись</span></back-btn><title-block>Додавання елемента до BST без балансування</title-block>   
+        <back-btn><double-arrow-left>&nbsp;</double-arrow-left><span>Повернутись</span></back-btn><title-block class="width_100_percent">Додавання елемента до BST без балансування</title-block>
     </view-header>
     <view-row>
         <data-structure>
-            <title-block><arrow-down>&nbsp;</arrow-down><span>Додавання елемента до BST без балансування</span></title-block>
+            <title-block class="width_100_percent"><arrow-down>&nbsp;</arrow-down><span>Додавання елемента до BST без балансування</span></title-block>
             <active-field>
-
+<p>Елементи:
+    <item class="init">0</item>
+    <item class="init">1</item>
+</p>
             </active-field>
         </data-structure>
         <right-block>
             <comments-block>
-                <title-block>Коментар до коду</title-block>  
+                <title-block class="width_100_percent">Коментар до коду</title-block>  
                 <active-field>
 
                 </active-field>  
@@ -27,14 +30,14 @@
     <view-row>
         
         <data-pseudocode>
-            <title-block><arrow-down>&nbsp;</arrow-down><span>Виконувана процедура&nbsp;::&nbsp;<span class="js_procedure_name red"></span></span></title-block>
+            <title-block class="width_100_percent"><arrow-down>&nbsp;</arrow-down><span>Виконувана процедура&nbsp;::&nbsp;<span class="js_procedure_name red"></span></span></title-block>
             <active-field>
 
             </active-field>
         </data-pseudocode>
         <right-block>
             <procedures-block>
-                <title-block>Процедури</title-block>  
+                <title-block class="width_100_percent">Процедури</title-block>  
                 <active-field>
 
                 </active-field>  

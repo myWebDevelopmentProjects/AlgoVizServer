@@ -7,8 +7,10 @@ data-structure,
 data-pseudocode,
 comments-block,
 procedures-block,
-control-btn {
-    display: block;
+control-btn,
+view-page,
+ul.algorithms_nav li {
+    display: inline-block;
     text-transform: uppercase;
     font-weight: bold;
     border: #666666 2px solid;
@@ -16,6 +18,17 @@ control-btn {
     border-radius: .4rem;
     text-align: center;
     margin: .2rem;
+}
+
+item {
+    display: inline-block;
+    border: #666666 2px solid;
+    padding: .4rem;
+    border-radius: 20px;
+    border-radius: 20px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
 }
 
 active-field {
@@ -27,9 +40,9 @@ active-field {
     padding: 0.5rem;
 }
 
-double-arrow-right {
+double-arrow-left {
     display: block;
-    background: url(../images/svg/double-arrow-right.svg);
+    background: url(../images/svg/double-arrow-left.svg);
     background-repeat: no-repeat;
     background-size: contain;
 }

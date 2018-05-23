@@ -15,6 +15,12 @@ body {
     .red {
         color: red;
     }
+    .width_100_percent {
+        width:100%;
+    }
+    .current-instruction {
+        background: #fffa90;
+    }
     @import "style-for-modal-window";
        content-view {
         @import "style-for-boxes";
@@ -37,7 +43,7 @@ body {
                 text-align: center;
                 cursor: pointer;
                 background: linear-gradient(#92c83d, #d5df23);
-                double-arrow-right {
+                double-arrow-left {
                     width: 10%;
                     height: 1rem;
                 }
@@ -50,6 +56,48 @@ body {
                 width:70%;
                 color: white;
                 background: linear-gradient(#37b44a, #029345);
+            }
+        }
+        view-page {
+            text-align: justify;
+            text-transform: none;
+            background: #fff;
+            font-weight: normal;
+            p,
+            ul{
+                margin: 0 0 .4rem 0;
+            }
+            li {
+                list-style-position: inside;
+            }
+            ul.algorithms_nav {
+                margin: .4rem auto .4rem auto;
+                li {
+                    background: linear-gradient(#c8aa27, #c8bd4e);
+                    background-repeat: no-repeat;
+                    color: #fff;
+                    width: 50%;
+                    text-align: left;
+                    a {
+                        text-align: left;
+                    }
+                    a:visited,
+                    a:link,
+                    a:hover {
+                        color: white;
+                        text-decoration: none;
+
+                    }
+                    a:after {
+                        display: inline-block;
+                        background: url(../images/svg/double-arrow-right-white.svg);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        content: "\00A0";
+                        width: 2rem;
+                        float: right;
+                    }
+                }
             }
         }
         view-row {
@@ -128,13 +176,13 @@ body {
                                 color: #fff;
                                 list-style: none;
                             }
-                            li.active {
+                            li.current {
                                 background: linear-gradient(#c87223, #c81722);
                                 background-repeat: no-repeat;
                                 color: #fff;
                                 span:before {
                                     display: inline-block;
-                                    background: url(../images/svg/double-arrow-right-white.svg);
+                                    background: url(../images/svg/double-arrow-left-white.svg);
                                     background-repeat: no-repeat;
                                     background-size: contain;
                                     content: "\00A0";

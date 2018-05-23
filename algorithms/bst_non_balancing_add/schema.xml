@@ -117,13 +117,8 @@
                 </right-node>                
             </root>
         </structure>
-        <functions-block>
-            <button function="balancingRandomization()">Рандомізація</button>
-            <button function="balancingDepreciation()">Амортизація</button>			
-            <button function="balancingOptimization()">Оптимізація</button>
-        </functions-block>
     </main-settings>
-    <procedure init="true" id="INSERT_BST" args="(Root, Object)">
+    <procedure current="true" id="INSERT_BST" args="(Root, Object)">
         <instruction>
             <comment-text>1 Метод добавления нового элемента в BST-дерево</comment-text>
             <comment-audio url="audio/Matt Skyer - Our Galaxy.mp3"/>
@@ -135,7 +130,7 @@
             <code><![CDATA[ Root <- call Insert_Node(Root, New_Elem) ]]></code>
         </instruction>
     </procedure>
-    <procedure id="INSERT_NODE" args="(Current,  New_Elem)">
+    <procedure current="false" id="INSERT_NODE" args="(Current,  New_Elem)">
         <instruction>
             <comment-text></comment-text>
             <comment-audio url=""/>
@@ -177,7 +172,7 @@
             <code><![CDATA[ return Current ]]></code>
         </instruction>                                      
     </procedure> 
-    <procedure id="ROTATION_R" args="(Current)">
+    <procedure current="false" id="ROTATION_R" args="(Current)">
         <instruction>
             <comment-text>Метод – ротация вправо</comment-text>
             <comment-audio url=""/>
@@ -204,7 +199,7 @@
             <code><![CDATA[ return Current   ]]></code>
         </instruction>                                   
     </procedure> 
-    <procedure id="ROTATION_L" args="(Current)">
+    <procedure current="false" id="ROTATION_L" args="(Current)">
         <instruction>
             <comment-text>Метод – ротация влево</comment-text>
             <comment-audio url=""/>

@@ -14,7 +14,7 @@ class Server {
     public function initLinks() {
         $links = $this->config->{'links'};
         $this->links = array_diff(scandir(ALGORITHMS, 1), array('..', '.'));
-        $this->algorithms_nav .= '<ul>'; 
+        $this->algorithms_nav .= '<ul class="algorithms_nav">';
         foreach($this->links as $link) {
         $value = $links->{$link};
             if (in_array($link, $this->links)) {

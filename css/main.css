@@ -12,6 +12,10 @@ body {
   font-size: 1em; }
   body .red {
     color: red; }
+  body .width_100_percent {
+    width: 100%; }
+  body .current-instruction {
+    background: #fffa90; }
   body screen-error,
   body error-title,
   body btn-close-modal {
@@ -106,8 +110,10 @@ body {
     body content-view data-pseudocode,
     body content-view comments-block,
     body content-view procedures-block,
-    body content-view control-btn {
-      display: block;
+    body content-view control-btn,
+    body content-view view-page,
+    body content-view ul.algorithms_nav li {
+      display: inline-block;
       text-transform: uppercase;
       font-weight: bold;
       border: #666666 2px solid;
@@ -115,6 +121,15 @@ body {
       border-radius: .4rem;
       text-align: center;
       margin: .2rem; }
+    body content-view item {
+      display: inline-block;
+      border: #666666 2px solid;
+      padding: .4rem;
+      border-radius: 20px;
+      border-radius: 20px;
+      height: 30px;
+      width: 30px;
+      text-align: center; }
     body content-view active-field {
       display: block;
       overflow-y: scroll;
@@ -122,9 +137,9 @@ body {
       text-align: justify;
       text-transform: none;
       padding: 0.5rem; }
-    body content-view double-arrow-right {
+    body content-view double-arrow-left {
       display: block;
-      background: url(../images/svg/double-arrow-right.svg);
+      background: url(../images/svg/double-arrow-left.svg);
       background-repeat: no-repeat;
       background-size: contain; }
     body content-view arrow-down {
@@ -174,7 +189,7 @@ body {
         text-align: center;
         cursor: pointer;
         background: linear-gradient(#92c83d, #d5df23); }
-        body content-view view-header back-btn double-arrow-right {
+        body content-view view-header back-btn double-arrow-left {
           width: 10%;
           height: 1rem; }
         body content-view view-header back-btn span {
@@ -184,6 +199,39 @@ body {
         width: 70%;
         color: white;
         background: linear-gradient(#37b44a, #029345); }
+    body content-view view-page {
+      text-align: justify;
+      text-transform: none;
+      background: #fff;
+      font-weight: normal; }
+      body content-view view-page p,
+      body content-view view-page ul {
+        margin: 0 0 .4rem 0; }
+      body content-view view-page li {
+        list-style-position: inside; }
+      body content-view view-page ul.algorithms_nav {
+        margin: .4rem auto .4rem auto; }
+        body content-view view-page ul.algorithms_nav li {
+          background: linear-gradient(#c8aa27, #c8bd4e);
+          background-repeat: no-repeat;
+          color: #fff;
+          width: 50%;
+          text-align: left; }
+          body content-view view-page ul.algorithms_nav li a {
+            text-align: left; }
+          body content-view view-page ul.algorithms_nav li a:visited,
+          body content-view view-page ul.algorithms_nav li a:link,
+          body content-view view-page ul.algorithms_nav li a:hover {
+            color: white;
+            text-decoration: none; }
+          body content-view view-page ul.algorithms_nav li a:after {
+            display: inline-block;
+            background: url(../images/svg/double-arrow-right-white.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: "\00A0";
+            width: 2rem;
+            float: right; }
     body content-view view-row {
       display: flex;
       width: 100%;
@@ -248,13 +296,13 @@ body {
                 margin: .2rem;
                 color: #fff;
                 list-style: none; }
-              body content-view view-row right-block procedures-block active-field ul li.active {
+              body content-view view-row right-block procedures-block active-field ul li.current {
                 background: linear-gradient(#c87223, #c81722);
                 background-repeat: no-repeat;
                 color: #fff; }
-                body content-view view-row right-block procedures-block active-field ul li.active span:before {
+                body content-view view-row right-block procedures-block active-field ul li.current span:before {
                   display: inline-block;
-                  background: url(../images/svg/double-arrow-right-white.svg);
+                  background: url(../images/svg/double-arrow-left-white.svg);
                   background-repeat: no-repeat;
                   background-size: contain;
                   content: "\00A0";
