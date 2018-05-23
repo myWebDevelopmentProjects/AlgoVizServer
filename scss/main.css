@@ -3,52 +3,340 @@
   border: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
-}
+  font-family: sans-serif; }
+  * audio {
+    width: 100%; }
 
 body {
   background: #848383;
-  font-size: 1em;
-}
+  font-size: 1em; }
+  body .red {
+    color: red; }
+  body screen-error,
+  body error-title,
+  body btn-close-modal {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: #666666 2px solid;
+    padding: .6rem;
+    border-radius: .4rem;
+    text-align: center;
+    margin: .2rem; }
+  body error-title-icon {
+    display: block;
+    background: url(../images/svg/error-title-icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain; }
+  body btn-close-icon {
+    display: block;
+    background: url(../images/svg/btn-close-icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain; }
+  body modal-window {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(160, 160, 160, 0.5);
+    z-index: 1; }
+    body modal-window screen-error {
+      display: block;
+      height: auto;
+      background: white;
+      padding: 0;
+      width: 25%;
+      margin: 10% auto 0 auto;
+      z-index: 2;
+      border-radius: 10px; }
+      body modal-window screen-error error-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+        background: linear-gradient(#c8313f, #dfd9da); }
+        body modal-window screen-error error-title error-title-icon {
+          width: 10%;
+          height: 2rem; }
+        body modal-window screen-error error-title span {
+          color: white;
+          width: 90%;
+          text-align: center; }
+      body modal-window screen-error error-msg {
+        display: block;
+        height: auto;
+        max-height: 15rem;
+        padding: 1rem;
+        overflow-y: scroll; }
+      body modal-window screen-error btn-close-modal {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 41%;
+        margin: 1rem auto 1rem auto;
+        cursor: pointer;
+        background: linear-gradient(#92c83d, #d5df23); }
+        body modal-window screen-error btn-close-modal btn-close-icon {
+          width: 10%;
+          height: 1rem; }
+        body modal-window screen-error btn-close-modal span {
+          width: 90%;
+          text-align: center; }
+  body content-view {
+    display: block;
+    padding: .5rem;
+    width: 1024px;
+    height: 768px;
+    background: #c4c4c4;
+    margin: 1rem auto;
+    border-radius: 10px; }
+    body content-view help-btn,
+    body content-view back-btn,
+    body content-view screen-error,
+    body content-view error-title,
+    body content-view title-block,
+    body content-view data-structure,
+    body content-view data-pseudocode,
+    body content-view comments-block,
+    body content-view procedures-block,
+    body content-view control-btn {
+      display: block;
+      text-transform: uppercase;
+      font-weight: bold;
+      border: #666666 2px solid;
+      padding: .6rem;
+      border-radius: .4rem;
+      text-align: center;
+      margin: .2rem; }
+    body content-view active-field {
+      display: block;
+      overflow-y: scroll;
+      word-wrap: break-word;
+      text-align: justify;
+      text-transform: none;
+      padding: 0.5rem; }
+    body content-view double-arrow-right {
+      display: block;
+      background: url(../images/svg/double-arrow-right.svg);
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view arrow-down {
+      display: block;
+      background: url(../images/svg/arrow-down.svg);
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view help-btn-icon {
+      display: block;
+      background: url(../images/svg/help-btn-icon.svg);
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view .start > control-icon {
+      background: url(../images/svg/start-btn-icon.svg);
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view .back > control-icon {
+      background: url(../images/svg/back-btn-icon.svg);
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view .pause > control-icon {
+      background: url(../images/svg/pause-btn-icon.svg);
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view .forward > control-icon {
+      background: url(../images/svg/forward-btn-icon.svg);
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view .stop > control-icon {
+      background: url(../images/svg/stop-btn-icon.svg);
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content-view view-header {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      body content-view view-header back-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 30%;
+        text-align: center;
+        cursor: pointer;
+        background: linear-gradient(#92c83d, #d5df23); }
+        body content-view view-header back-btn double-arrow-right {
+          width: 10%;
+          height: 1rem; }
+        body content-view view-header back-btn span {
+          width: 90%;
+          text-align: center; }
+      body content-view view-header title-block {
+        width: 70%;
+        color: white;
+        background: linear-gradient(#37b44a, #029345); }
+    body content-view view-row {
+      display: flex;
+      width: 100%;
+      align-items: flex-start;
+      justify-content: center; }
+      body content-view view-row data-structure {
+        height: 22rem;
+        background: white;
+        padding: 0;
+        width: 70%; }
+        body content-view view-row data-structure title-block {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 0;
+          border-top: 0;
+          border-right: 0;
+          border-left: 0;
+          background: linear-gradient(#92c83d, #d5df23); }
+          body content-view view-row data-structure title-block arrow-down {
+            width: 10%;
+            height: 1rem; }
+          body content-view view-row data-structure title-block span {
+            width: 90%;
+            text-align: center; }
+      body content-view view-row right-block {
+        width: 30%; }
+        body content-view view-row right-block comments-block {
+          height: 17rem;
+          background: white;
+          padding: 0;
+          width: 100%; }
+          body content-view view-row right-block comments-block title-block {
+            margin: 0;
+            border-top: 0;
+            border-right: 0;
+            border-left: 0;
+            background: linear-gradient(#92c83d, #d5df23); }
+          body content-view view-row right-block comments-block active-field {
+            height: 187px; }
+        body content-view view-row right-block procedures-block {
+          height: 17em;
+          background: white;
+          padding: 0;
+          width: 98%; }
+          body content-view view-row right-block procedures-block title-block {
+            margin: 0;
+            border-top: 0;
+            border-right: 0;
+            border-left: 0;
+            background: linear-gradient(#92c83d, #d5df23); }
+          body content-view view-row right-block procedures-block active-field {
+            overflow-y: scroll; }
+            body content-view view-row right-block procedures-block active-field ul {
+              height: 12rem; }
+              body content-view view-row right-block procedures-block active-field ul li {
+                border: #666666 2px solid;
+                background: linear-gradient(#a1a2c8, #dad6df);
+                padding: .6rem;
+                border-radius: .4rem;
+                text-align: center;
+                margin: .2rem;
+                color: #fff;
+                list-style: none; }
+              body content-view view-row right-block procedures-block active-field ul li.active {
+                background: linear-gradient(#c87223, #c81722);
+                background-repeat: no-repeat;
+                color: #fff; }
+                body content-view view-row right-block procedures-block active-field ul li.active span:before {
+                  display: inline-block;
+                  background: url(../images/svg/double-arrow-right-white.svg);
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  content: "\00A0";
+                  width: 2rem;
+                  float: left; }
+      body content-view view-row data-pseudocode {
+        height: 17rem;
+        background: white;
+        padding: 0;
+        width: 70%; }
+        body content-view view-row data-pseudocode title-block {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 0;
+          border-top: 0;
+          border-right: 0;
+          border-left: 0;
+          background: linear-gradient(#92c83d, #d5df23); }
+          body content-view view-row data-pseudocode title-block arrow-down {
+            width: 10%;
+            height: 1rem;
+            height: 1rem; }
+          body content-view view-row data-pseudocode title-block span {
+            width: 90%;
+            text-align: center; }
+            body content-view view-row data-pseudocode title-block span .js_procedure_name {
+              text-transform: none; }
+        body content-view view-row data-pseudocode active-field {
+          height: 210px; }
+          body content-view view-row data-pseudocode active-field ol {
+            list-style: none;
+            padding: 3px; }
+            body content-view view-row data-pseudocode active-field ol li::before {
+              content: counter(li);
+              color: black;
+              display: inline-block;
+              width: 1.3em;
+              margin: 0 1em 0 0;
+              background: no-repeat url("../images/svg/code_part_li.svg");
+              background-size: contain;
+              text-align: center;
+              font-weight: bold; }
+            body content-view view-row data-pseudocode active-field ol li {
+              counter-increment: li;
+              margin: 0 0 .5em 0; }
+      body content-view view-row help-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 15%;
+        text-align: center;
+        cursor: pointer;
+        background: linear-gradient(#92c83d, #d5df23); }
+        body content-view view-row help-btn help-btn-icon {
+          width: 10%;
+          height: 1rem; }
+        body content-view view-row help-btn span {
+          width: 90%;
+          text-align: center; }
+      body content-view view-row control-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 12%;
+        color: white;
+        cursor: pointer;
+        background: linear-gradient(#29a1db, #2e3e9a); }
+        body content-view view-row control-btn span {
+          width: 90%;
+          text-align: center; }
+        body content-view view-row control-btn control-icon {
+          width: 10%;
+          height: 1rem;
+          width: 1rem;
+          margin: 0 .3rem 0 .2rem; }
+        body content-view view-row control-btn start-control-icon {
+          width: 10%;
+          height: 1rem; }
+    body content-view view-footer {
+      display: block; }
+      body content-view view-footer p {
+        font-size: .8rem; }
 
-body content-view {
-  display: block;
-  padding: 1rem;
-  width: 1024px;
-  height: 768px;
-  background: #c4c4c4;
-  margin: 1rem auto;
-  border-radius: 10px;
-}
-
-body content-view back-btn,
-body content-view title {
-  display: block;
-  text-transform: uppercase;
-  font-weight: bold;
-  border: #666666 2px solid;
-  padding: .6rem;
-  border-radius: .4rem;
-  text-align: center;
-  margin: .2rem;
-}
-
-body content-view view-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-body content-view view-header back-btn {
-  width: 30%;
-  text-align: center;
-  cursor: pointer;
-  background: linear-gradient(#92c83d, #d5df23);
-}
-
-body content-view view-header title {
-  width: 70%;
-  color: blue;
-  background: linear-gradient(#37b44a, #029345);
-}
 /*# sourceMappingURL=main.css.map */

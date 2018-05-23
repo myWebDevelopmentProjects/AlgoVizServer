@@ -10,6 +10,85 @@
 body {
   background: #848383;
   font-size: 1em; }
+  body .red {
+    color: red; }
+  body screen-error,
+  body error-title,
+  body btn-close-modal {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: #666666 2px solid;
+    padding: .6rem;
+    border-radius: .4rem;
+    text-align: center;
+    margin: .2rem; }
+  body error-title-icon {
+    display: block;
+    background: url(../images/svg/error-title-icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain; }
+  body btn-close-icon {
+    display: block;
+    background: url(../images/svg/btn-close-icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain; }
+  body modal-window {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(160, 160, 160, 0.5);
+    z-index: 1; }
+    body modal-window screen-error {
+      display: block;
+      height: auto;
+      background: white;
+      padding: 0;
+      width: 25%;
+      margin: 10% auto 0 auto;
+      z-index: 2;
+      border-radius: 10px; }
+      body modal-window screen-error error-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+        background: linear-gradient(#c8313f, #dfd9da); }
+        body modal-window screen-error error-title error-title-icon {
+          width: 10%;
+          height: 2rem; }
+        body modal-window screen-error error-title span {
+          color: white;
+          width: 90%;
+          text-align: center; }
+      body modal-window screen-error error-msg {
+        display: block;
+        height: auto;
+        max-height: 15rem;
+        padding: 1rem;
+        overflow-y: scroll; }
+      body modal-window screen-error btn-close-modal {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 41%;
+        margin: 1rem auto 1rem auto;
+        cursor: pointer;
+        background: linear-gradient(#92c83d, #d5df23); }
+        body modal-window screen-error btn-close-modal btn-close-icon {
+          width: 10%;
+          height: 1rem; }
+        body modal-window screen-error btn-close-modal span {
+          width: 90%;
+          text-align: center; }
   body content-view {
     display: block;
     padding: .5rem;
@@ -20,6 +99,8 @@ body {
     border-radius: 10px; }
     body content-view help-btn,
     body content-view back-btn,
+    body content-view screen-error,
+    body content-view error-title,
     body content-view title-block,
     body content-view data-structure,
     body content-view data-pseudocode,
@@ -37,7 +118,10 @@ body {
     body content-view active-field {
       display: block;
       overflow-y: scroll;
-      word-wrap: break-word; }
+      word-wrap: break-word;
+      text-align: justify;
+      text-transform: none;
+      padding: 0.5rem; }
     body content-view double-arrow-right {
       display: block;
       background: url(../images/svg/double-arrow-right.svg);
@@ -138,6 +222,8 @@ body {
             border-right: 0;
             border-left: 0;
             background: linear-gradient(#92c83d, #d5df23); }
+          body content-view view-row right-block comments-block active-field {
+            height: 187px; }
         body content-view view-row right-block procedures-block {
           height: 17em;
           background: white;
@@ -151,6 +237,29 @@ body {
             background: linear-gradient(#92c83d, #d5df23); }
           body content-view view-row right-block procedures-block active-field {
             overflow-y: scroll; }
+            body content-view view-row right-block procedures-block active-field ul {
+              height: 12rem; }
+              body content-view view-row right-block procedures-block active-field ul li {
+                border: #666666 2px solid;
+                background: linear-gradient(#a1a2c8, #dad6df);
+                padding: .6rem;
+                border-radius: .4rem;
+                text-align: center;
+                margin: .2rem;
+                color: #fff;
+                list-style: none; }
+              body content-view view-row right-block procedures-block active-field ul li.active {
+                background: linear-gradient(#c87223, #c81722);
+                background-repeat: no-repeat;
+                color: #fff; }
+                body content-view view-row right-block procedures-block active-field ul li.active span:before {
+                  display: inline-block;
+                  background: url(../images/svg/double-arrow-right-white.svg);
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  content: "\00A0";
+                  width: 2rem;
+                  float: left; }
       body content-view view-row data-pseudocode {
         height: 17rem;
         background: white;
@@ -167,17 +276,15 @@ body {
           background: linear-gradient(#92c83d, #d5df23); }
           body content-view view-row data-pseudocode title-block arrow-down {
             width: 10%;
-            height: 1px; }
+            height: 1rem;
+            height: 1rem; }
           body content-view view-row data-pseudocode title-block span {
             width: 90%;
             text-align: center; }
             body content-view view-row data-pseudocode title-block span .js_procedure_name {
               text-transform: none; }
         body content-view view-row data-pseudocode active-field {
-          height: 210px;
-          overflow-y: scroll;
-          text-align: left;
-          text-transform: none; }
+          height: 210px; }
           body content-view view-row data-pseudocode active-field ol {
             list-style: none;
             padding: 3px; }

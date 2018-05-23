@@ -1,5 +1,7 @@
 help-btn,
 back-btn,
+screen-error,
+error-title,
 title-block,
 data-structure,
 data-pseudocode,
@@ -20,6 +22,9 @@ active-field {
     display: block;
     overflow-y: scroll;
     word-wrap: break-word;
+    text-align: justify;
+    text-transform: none; 
+    padding: 0.5rem;
 }
 
 double-arrow-right {

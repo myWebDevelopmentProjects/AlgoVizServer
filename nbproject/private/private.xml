@@ -3,16 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp/htdocs/AlgoVizServer/config.xml</file>
             <file>file:/D:/xampp/htdocs/AlgoVizServer/algorithms/bst_non_balancing_add/index.php</file>
+            <file>file:/D:/xampp/htdocs/AlgoVizServer/algorithms/bst_non_balancing_add/schema.xml</file>
             <file>file:/D:/xampp/htdocs/AlgoVizServer/scss/main.scss</file>
-            <file>file:/D:/xampp/htdocs/AlgoVizServer/classes/Server.php</file>
             <file>file:/D:/xampp/htdocs/AlgoVizServer/js/structure/bst.js</file>
-            <file>file:/D:/xampp/htdocs/AlgoVizServer/html-templates/footer.php</file>
+            <file>file:/D:/xampp/htdocs/AlgoVizServer/js/structure/fields.js</file>
+            <file>file:/D:/xampp/htdocs/AlgoVizServer/html-templates/header.php</file>
+            <file>file:/D:/xampp/htdocs/AlgoVizServer/js/main.js</file>
             <file>file:/D:/xampp/htdocs/AlgoVizServer/scss/style-for-boxes.scss</file>
-            <file>file:/D:/xampp/htdocs/AlgoVizServer/html-templates/default.php</file>
             <file>file:/D:/xampp/htdocs/AlgoVizServer/algorithms/bst_non_balancing_add/scenario.js</file>
-            <file>file:/D:/xampp/htdocs/AlgoVizServer/html-templates/software-info.php</file>
         </group>
     </open-files>
 </project-private>

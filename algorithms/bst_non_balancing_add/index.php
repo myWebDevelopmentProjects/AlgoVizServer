@@ -16,9 +16,10 @@
                 <active-field>
 
                 </active-field>  
-                <audio controls>
-                    <source src="audio/Matt Skyer - Our Galaxy.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
+                <audio class="audio-comment" controls>
+                    <source id="mp3_src" src="" type="audio/mpeg">
+                    <source id="ogg_src" src="" type="audio/ogg">
+                    Браузер не підтримує програвання звукових файлів!
                 </audio>
             </comments-block>
         </right-block>
@@ -26,7 +27,7 @@
     <view-row>
         
         <data-pseudocode>
-            <title-block><arrow-down>&nbsp;</arrow-down><span>Виконувана процедура&nbsp;::&nbsp;<span class="js_procedure_name"></span></span></title-block>
+            <title-block><arrow-down>&nbsp;</arrow-down><span>Виконувана процедура&nbsp;::&nbsp;<span class="js_procedure_name red"></span></span></title-block>
             <active-field>
 
             </active-field>
@@ -35,7 +36,7 @@
             <procedures-block>
                 <title-block>Процедури</title-block>  
                 <active-field>
-ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
                 </active-field>  
             </procedures-block>
         </right-block>
@@ -52,7 +53,7 @@ ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
     include_once dirname(__FILE__) . '../../../html-templates/software-info.php';
     ?>
 </content-view>
-<script src="scenario.js"></script>
+<script src="scenario.js" defer></script>
 <?php
 
 include_once dirname(__FILE__) . '../../../html-templates/footer.php';

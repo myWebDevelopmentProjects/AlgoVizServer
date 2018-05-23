@@ -8,10 +8,15 @@
         width: 100%;
     }
 }
+
 body {
     background: #848383;
     font-size: 1em;
-    content-view {
+    .red {
+        color: red;
+    }
+    @import "style-for-modal-window";
+       content-view {
         @import "style-for-boxes";
         display: block;
         padding: .5rem;
@@ -45,7 +50,6 @@ body {
                 width:70%;
                 color: white;
                 background: linear-gradient(#37b44a, #029345);
-
             }
         }
         view-row {
@@ -95,7 +99,7 @@ body {
                         background: linear-gradient(#92c83d, #d5df23);
                     }
                     active-field {
-
+                        height: 187px;
                     }
                 }                
                 procedures-block {
@@ -112,7 +116,33 @@ body {
                     }
                     active-field {
                         overflow-y: scroll;
-
+                        ul {
+                            height: 12rem;
+                            li {
+                                border: #666666 2px solid;
+                                background: linear-gradient(#a1a2c8, #dad6df);
+                                padding: .6rem;
+                                border-radius: .4rem;
+                                text-align: center;
+                                margin: .2rem;
+                                color: #fff;
+                                list-style: none;
+                            }
+                            li.active {
+                                background: linear-gradient(#c87223, #c81722);
+                                background-repeat: no-repeat;
+                                color: #fff;
+                                span:before {
+                                    display: inline-block;
+                                    background: url(../images/svg/double-arrow-right-white.svg);
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    content: "\00A0";
+                                    width: 2rem;
+                                    float: left;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -132,7 +162,8 @@ body {
                     background: linear-gradient(#92c83d, #d5df23);
                     arrow-down {
                         width: 10%;
-                        height: 1px;
+                        height: 1rem;
+                        height: 1rem;
                     }
                     span {
                         width: 90%;
@@ -144,9 +175,6 @@ body {
                 }
                 active-field {
                     height: 210px;
-                    overflow-y: scroll;
-                    text-align: left;
-                    text-transform: none;
                     ol {
                         list-style: none;
                         padding:3px;

@@ -7,17 +7,19 @@ var Procedure = function (name, init, args) {
     this.instructions = [];
 }
 
-function Instruction(code, commentText, commentSound) {
+function Instruction(code, commentText, commentAudio) {
     this.commentText = commentText;
-    this.commentSound = commentSound;
+    this.commentAudio = commentAudio;
     this.code = code;
 }
 
 (function (app, $) {
     //
     app.procedures = [];
+    
     //
     app.updatePseudocodeField = function (procedure) {
+        var self = this;
         var code = "<ol>";
         console.log(procedure);
         // Виведення всіх рядків псевдокоду даної процедури
@@ -28,19 +30,22 @@ function Instruction(code, commentText, commentSound) {
         }
         code += "</ol>";
         console.log(code);
-        $("data-pseudocode active-field").html(code);
-
-    }
+        // 
+        self.element.pseudoCode.html(code);
+        // Виведення першого коментаря стосовно початкової процедури алгоритму
+        self.element.textComment.html(procedure.instructions[0].commentText);
+        // Виведення першого аудио коментаря стосовно початкової процедури алгоритму
+        console.log(procedure.instructions[0].commentAudio);
+        self.updateAudio(procedure.instructions[0].commentAudio);
+        // self.element.audioComment.attr("src", procedure.instructions[0].commentAudio);
+    };
     //
     window.app.init = {
         start: function () {
             var self = this;
+            //
             console.log("init app decrease");
-
-            $("back-btn").on("click", function () {
-                window.location.assign("/AlgoVizServer");
-            });
-
+            //
             $.ajax({
                 type: "GET",
                 url: "schema.xml",
@@ -54,7 +59,6 @@ function Instruction(code, commentText, commentSound) {
                     } else {
                         app.errorHandler("Нема процедур!");
                     }
-
                 },
                 error: function (response) {
                     throw new Error("ERR :: no file found!");
@@ -62,15 +66,21 @@ function Instruction(code, commentText, commentSound) {
             });
         },
         initProcedureDisplay: function () {
-            self = this;
-            for (procedure in app.procedures) {
+            var self = this;
+            var procedureList = "<ul>";
+            for (var procedure in app.procedures) {
                 if (app.procedures[procedure].hasOwnProperty("init") && app.procedures[procedure].init === "true") {
                     var currentProcedre = app.procedures[procedure];
                     // Виведення назви початкової процедури
                     $(".js_procedure_name").html(currentProcedre.name + currentProcedre.args);
                     app.updatePseudocodeField(currentProcedre);
                 }
+                procedureList += "<li><span>"+ app.procedures[procedure].name +"</span></li>";
             }
+            procedureList += "</ul>";
+            app.element.procedures.html(procedureList);
+            app.element.procedures.find("li:nth-child(1)").addClass("active");
+
         },
         parseProcedures: function ($procedure) {
             var self = this;
@@ -87,9 +97,9 @@ function Instruction(code, commentText, commentSound) {
                     var $instructions = $(this).find("instruction");
                     $instructions.each(function(){
                         var commentText = typeof $(this).find("comment-text") !== "undefined" ? $(this).find("comment-text").text() : "empty";
-                        var commentSound = typeof $(this).find("comment-sound") !== "undefined" ? $(this).find("comment-sound").text() : "empty";
+                        var commentAudio = typeof $(this).find("comment-audio").attr("url") !== "undefined" ? $(this).find("comment-audio").attr("url") : "empty";
                         var codePart = typeof $(this).find("code") ? $(this).find("code").text() : "empty";
-                        app.procedures[app.procedures.length - 1].instructions.push(new Instruction(codePart, commentText, commentSound));
+                        app.procedures[app.procedures.length - 1].instructions.push(new Instruction(codePart, commentText, commentAudio));
                     });
                 } catch (error) {
                     app.errorHandler("ERR :: " + error);
@@ -98,14 +108,19 @@ function Instruction(code, commentText, commentSound) {
             });
             // після завершення проходу по тсрутутрах процедур перехід до відображення початкової 
             // процедури алгоритму
-            this.initProcedureDisplay();
+            self.initProcedureDisplay();
         }
     };
 })(window.app || {}, jQuery);
 
 //
 $(document).ready(function () {
+    //
     app.init.start();
+    // ініціалізація подій для елементів сторінки
+    $("back-btn").on("click", function () {
+        window.location.assign("/AlgoVizServer");
+    });
 });
 
 
