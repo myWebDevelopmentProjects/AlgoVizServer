@@ -56,7 +56,8 @@
     include_once dirname(__FILE__) . '../../../html-templates/software-info.php';
     ?>
 </content-view>
-<script src="scenario.js" defer></script>
+<script src="js/scenario.js" defer></script>
+<script src="js/ready.js" defer></script>
 <?php
 
 include_once dirname(__FILE__) . '../../../html-templates/footer.php';

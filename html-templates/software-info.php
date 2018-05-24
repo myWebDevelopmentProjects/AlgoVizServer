@@ -1,5 +1,5 @@
 <view-footer>
-    <p>&copy;&nbsp;2018, Візуалізація алгоритмів</p>
+    <p class="copy"></p>
 </view-footer>
 
 

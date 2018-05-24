@@ -2,20 +2,7 @@
 <schema>
     <main-settings>
         <main-title>Візуалізація алгоритмів локального сортування BST-дерева</main-title>
-        <methodes-block>
-            <methodes-manually>
-                <button function="addElement()" >Додати елемент</button>
-                <button function="deleteElement()">Видалити елемент</button>
-            </methodes-manually>
-            <methodes-auto-by-order-increase>
-                <button function="addElementByOrderIncrease()">Додати елемент</button>
-                <button function="deleteElementByOrderIncrease()">Видалити елемент</button>
-            </methodes-auto-by-order-increase>
-            <methodes-auto-by-order-decrease>
-                <button function="addElementByOrderDecrease()">Додати елемент</button>
-                <button function="deleteElementByOrderDecrease()">Видалити елемент</button>
-            </methodes-auto-by-order-decrease>
-        </methodes-block>
+        <page-title_>Додавання елемента до BST без балансування</page-title_>
         <structure>
             <type>BST</type>
             <root value="">
@@ -121,7 +108,7 @@
     <procedure current="true" id="INSERT_BST" args="(Root, Object)">
         <instruction>
             <comment-text>1 Метод добавления нового элемента в BST-дерево</comment-text>
-            <comment-audio url="audio/Matt Skyer - Our Galaxy.mp3"/>
+            <comment-audio url="/audio/Matt Skyer - Our Galaxy.mp3"/>
             <code><![CDATA[ New_Elem <- call new Node(Object) ]]></code>
         </instruction>
         <instruction>

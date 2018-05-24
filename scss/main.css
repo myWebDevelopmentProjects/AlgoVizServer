@@ -257,6 +257,33 @@ body {
           body content-view view-row data-structure title-block span {
             width: 90%;
             text-align: center; }
+        body content-view view-row data-structure active-field {
+          /* The animation code */ }
+@keyframes example {
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 0px; }
+  25% {
+    background-color: yellow;
+    left: 200px;
+    top: 0px; }
+  50% {
+    background-color: blue;
+    left: 200px;
+    top: 200px; }
+  75% {
+    background-color: green;
+    left: 0px;
+    top: 200px; }
+  100% {
+    background-color: red;
+    left: 0px;
+    top: 0px; } }
+          body content-view view-row data-structure active-field item {
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s; }
       body content-view view-row right-block {
         width: 30%; }
         body content-view view-row right-block comments-block {

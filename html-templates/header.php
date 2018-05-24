@@ -8,8 +8,10 @@
         <link rel="stylesheet" type="text/css" href="/AlgoVizServer/css/main.css" >
         <script src="/AlgoVizServer/js/jquery/jquery-3.3.1.min.js"></script>
         <script src="/AlgoVizServer/js/jquery/jquery-ui.min.js"></script>
+        <script src="/AlgoVizServer/js/settings.js" defer></script>
         <script src="/AlgoVizServer/js/main.js" defer></script>
         <script src="/AlgoVizServer/js/structure/element.js" defer></script>
+        <script src="/AlgoVizServer/js/main_ready.js" defer></script>
     </head>
     <body>
         <modal-window>

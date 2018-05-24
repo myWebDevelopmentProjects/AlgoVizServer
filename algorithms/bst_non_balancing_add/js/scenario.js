@@ -1,4 +1,4 @@
-//
+'use strict';
 
 var Procedure = function (name, current, args) {
     this.name = name;
@@ -16,7 +16,11 @@ function Instruction(code, commentText, commentAudio) {
 (function (app, $) {
     //
     app.procedures = [];
-    
+    // Поточна процедурв
+    app.currentProcedure = {
+        name: "",
+        instruction: 0
+    };
     //
     app.updatePseudocodeField = function (procedure) {
         var self = this;
@@ -56,20 +60,35 @@ function Instruction(code, commentText, commentAudio) {
                 url: "schema.xml",
                 dataType: "xml",
                 success: function (xml) {
-                    console.log($(xml).find("schema").find("structure").find("type").text());
+                    //
+                    var $page_title = $(xml).find("schema").find("main-settings").find("page-title");
                     var $procedure = $(xml).find("schema").find("procedure");
+                    //
+                    self.parsePageTitle($page_title);
+                    //
                     if ($procedure.length > 0) {
-                        console.log($procedure.find("instruction"));
                         self.parseProcedures($procedure);
-                        app.errorHandler("є процедур!");
                     } else {
-                        app.errorHandler("Нема процедур!");
+                        app.criticalErrorHandler("Нема процедур!");
                     }
+                    //
                 },
                 error: function (response) {
-                    throw new Error("ERR :: no file found!");
+                    var msg = "ERR :: schema.xml is not found!";
+                    app.criticalErrorHandler(msg);
+                    throw new Error(msg);
                 }
             });
+        },
+        parsePageTitle: function($page_title){
+            console.log("title", $page_title.length);
+            if ($page_title.length === 0) {
+                console.log("не знайдено заголовку сторінки!");
+                app.criticalErrorHandler("не знайдено заголовку сторынки! ");
+                return false;
+            }
+            console.log("title", $page_title.text());
+            return false;
         },
         initProcedureDisplay: function () {
             var self = this;
@@ -133,19 +152,3 @@ function Instruction(code, commentText, commentAudio) {
         }
     };
 })(window.app || {}, jQuery);
-
-//
-$(document).ready(function () {
-    //
-    app.init.start();
-    // ініціалізація подій для елементів сторінки
-    $("back-btn").on("click", function () {
-        window.location.assign("/AlgoVizServer");
-    });
-
-    $("control-btn.start").on("click", function(){
-        app.start();
-    });
-});
-
-
