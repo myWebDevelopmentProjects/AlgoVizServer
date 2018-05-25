@@ -1,7 +1,7 @@
 (function (app, $) {
     app.init_localization = function(){
         // Ініціалізація мовних налаштувань
-        $.when($.ajax( app.local_path + "localization.xml" )
+        $.when($.ajax(app.paths.local_path + "pages/index/localization.xml" )
             .done (function(xml){
                 console.log("DATA", xml);
                 $localization_main = $(xml).find("localization");

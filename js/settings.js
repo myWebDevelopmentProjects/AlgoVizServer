@@ -5,11 +5,16 @@
 
     };
     //
+    app.paths = {
+       global_path: window.location.hostname + "/",
+       local_path: window.location.pathname
+    };
+    //
     app.localization = {};
     //
     app.initMainLocalization = function(){
-        // Р†РЅС–С†С–Р°Р»С–Р·Р°С†С–СЏ РјРѕРІРЅРёС… РЅР°Р»Р°С€С‚СѓРІР°РЅСЊ
-        $.when($.ajax( app.global_path + "localization_main.xml" )
+        // Ініціалізація мовних налаштувань
+        $.when($.ajax("localization_main.xml")
             .done (function(xml){
                 console.log("DATA", xml);
                 $localization_main = $(xml).find("localization-main");

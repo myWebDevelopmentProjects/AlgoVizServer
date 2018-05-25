@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/activities/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/algorithms/bst_local_balancing_random/scenario.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/algorithms/bst_non_balancing_add/js/app.dom_elements.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/algorithms/bst_non_balancing_add/js/app.init_localization.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/algorithms/bst_non_balancing_add/js/ready.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/classes/Server.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/classes/index.php" charset="UTF-8" />
@@ -15,12 +16,15 @@
     <file url="file://$PROJECT_DIR$/css/style-for-modal-window.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/html-templates/footer.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/html-templates/index.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/html-templates/software-info.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/main.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/main_ready.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/settings.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/structure/bst.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/structure/element.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pages/index/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pages/index/js/ready.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/scss/main.scss" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/scss/style-for-boxes.scss" charset="UTF-8" />
