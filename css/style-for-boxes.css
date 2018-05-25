@@ -1,14 +1,14 @@
-help-btn,
-back-btn,
-screen-error,
-error-title,
-title-block,
-data-structure,
-data-pseudocode,
-comments-block,
-procedures-block,
-control-btn,
-view-page,
+help_btn,
+back_btn,
+screen_error,
+error_title,
+title_block,
+data_structure,
+data_pseudocode,
+comments_block,
+procedures_block,
+control_btn,
+view_page,
 ul.algorithms_nav li {
   display: inline-block;
   text-transform: uppercase;
@@ -29,7 +29,7 @@ item {
   width: 30px;
   text-align: center; }
 
-active-field {
+active_field {
   display: block;
   overflow-y: scroll;
   word-wrap: break-word;
@@ -37,50 +37,50 @@ active-field {
   text-transform: none;
   padding: 0.5rem; }
 
-double-arrow-left {
+double_arrow_left {
   display: block;
-  background: url(../images/svg/double-arrow-left.svg);
+  background: url(../images/svg/double_arrow_left.svg);
   background-repeat: no-repeat;
   background-size: contain; }
 
-arrow-down {
+arrow_down {
   display: block;
-  background: url(../images/svg/arrow-down.svg);
+  background: url(../images/svg/arrow_down.svg);
   background-repeat: no-repeat;
   background-size: contain; }
 
-help-btn-icon {
+help_btn_icon {
   display: block;
-  background: url(../images/svg/help-btn-icon.svg);
+  background: url(../images/svg/help_btn_icon.svg);
   background-repeat: no-repeat;
   background-size: contain; }
 
-.start > control-icon {
-  background: url(../images/svg/start-btn-icon.svg);
-  display: block;
-  background-repeat: no-repeat;
-  background-size: contain; }
-
-.back > control-icon {
-  background: url(../images/svg/back-btn-icon.svg);
+.start > control_icon {
+  background: url(../images/svg/start_btn_icon.svg);
   display: block;
   background-repeat: no-repeat;
   background-size: contain; }
 
-.pause > control-icon {
-  background: url(../images/svg/pause-btn-icon.svg);
+.back > control_icon {
+  background: url(../images/svg/back_btn_icon.svg);
   display: block;
   background-repeat: no-repeat;
   background-size: contain; }
 
-.forward > control-icon {
-  background: url(../images/svg/forward-btn-icon.svg);
+.pause > control_icon {
+  background: url(../images/svg/pause_btn_icon.svg);
   display: block;
   background-repeat: no-repeat;
   background-size: contain; }
 
-.stop > control-icon {
-  background: url(../images/svg/stop-btn-icon.svg);
+.forward > control_icon {
+  background: url(../images/svg/forward_btn_icon.svg);
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.stop > control_icon {
+  background: url(../images/svg/stop_btn_icon.svg);
   display: block;
   background-repeat: no-repeat;
   background-size: contain; }

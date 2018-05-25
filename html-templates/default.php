@@ -1,19 +1,10 @@
-<content-view>
-    <view-header>
-        <title-block class="width_100_percent">Веб-застосунок
-            візуалізації алгоритмів локального балансування BST-дерева</title-block>
-    </view-header>
-    <view-page>
-        <p>BST-дерево – это разновидность бинарного дерева, для которого верно:</p>
-        <ul>
-            <li>ключ каждого узла дерева Х (если Х не равен null) имеет левые узлы со значениями ключей меньшими значения ключа узла X;</li>
-            <li>все правые узлы в правом поддереве узла Х содержат значения ключей, которые больше или равны значению ключа узла X.</li>
-        </ul>
-
-        BST-дерево применяется для построения абстрактных структур, таких, как множества, мультимножества, ассоциативные массивы (словари).
-
-
+<content_view>
+    <view_header>
+        <title_block class="width_100_percent">&nbsp;</title_block>
+    </view_header>
+    <view_page>
+        <content_of_page>&nbsp;</content_of_page>
 
 <?= $GLOBALS['Server']->algorithms_nav;?>
-    </view-page>
-</content-view>
+    </view_page>
+</content_view>

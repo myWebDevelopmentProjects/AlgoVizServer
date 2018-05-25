@@ -1,6 +1,6 @@
-screen-error,
-error-title,
-btn-close-modal
+screen_error,
+error_title,
+btn_close_modal
 {
     display: block;
     text-transform: uppercase;
@@ -12,20 +12,20 @@ btn-close-modal
     margin: .2rem;
 }
 
-error-title-icon {
+error_title_icon {
     display: block;
-    background: url(../images/svg/error-title-icon.svg);
+    background: url(../images/svg/error_title_icon.svg);
     background-repeat: no-repeat;
     background-size: contain;
 }
-btn-close-icon {
+btn_close_icon {
     display: block;
-    background: url(../images/svg/btn-close-icon.svg);
+    background: url(../images/svg/btn_close_icon.svg);
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-modal-window {
+modal_window {
     display: none;
     position: absolute;
     width: 100%;
@@ -36,7 +36,7 @@ modal-window {
     bottom: 0;
     background: rgba(160, 160, 160, 0.5);
     z-index: 1;
-    screen-error {
+    screen_error {
         display: block;
         height: auto;
         background: white;
@@ -45,7 +45,7 @@ modal-window {
         margin: 10% auto 0 auto;
         z-index: 2;
         border-radius: 10px;
-        error-title {
+        error_title {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -54,7 +54,7 @@ modal-window {
             border-right: 0;
             border-left: 0;
             background: linear-gradient(#c8313f, #dfd9da);
-            error-title-icon {
+            error_title_icon {
                 width: 10%;
                 height: 2rem;
             }
@@ -71,7 +71,7 @@ modal-window {
             padding: 1rem;
             overflow-y: scroll;
         }
-        btn-close-modal {
+        btn_close_modal {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -79,7 +79,7 @@ modal-window {
             margin: 1rem auto 1rem auto;
             cursor: pointer;
             background: linear-gradient(#92c83d, #d5df23);
-            btn-close-icon {
+            btn_close_icon {
                 width: 10%;
                 height: 1rem;
             }

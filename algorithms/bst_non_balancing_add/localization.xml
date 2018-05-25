@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localization>
+    <index>
+        <main_title>Візуалізація алгоритмів локального сортування BST-дерева</main_title>
+        <title_block_span>Додавання елемента до BST без балансування</title_block_span>
+        <back_btn_span>Повернутись</back_btn_span>
+    </index>
+</localization>

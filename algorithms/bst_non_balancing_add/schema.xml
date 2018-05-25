@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <schema>
     <main-settings>
-        <main-title>Візуалізація алгоритмів локального сортування BST-дерева</main-title>
-        <page-title_>Додавання елемента до BST без балансування</page-title_>
-        <structure>
+         <structure>
             <type>BST</type>
             <root value="">
                 <left-node value="">

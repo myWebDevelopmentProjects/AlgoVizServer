@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<localization>
+<localization_main>
     <error>
         <no_title_found>
             <uk><![CDATA[ Не знайдено заголовку сторінки! ]]></uk>
@@ -13,7 +13,7 @@
             <uk><![CDATA[ Процедури знайдено!  ]]></uk>
         </procedures_confirmed>
     </success>
-    <copy>
+    <copy_block>
         <uk><![CDATA[ &copy;&nbsp;2018, Візуалізація алгоритмів ]]></uk>
-    </copy>
-</localization>
+    </copy_block>
+</localization_main>

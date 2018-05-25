@@ -6,9 +6,10 @@ class Server {
     
     public $algorithms_nav;
     public $config;
-    
+
     public function __construct() {
         $this->config = simplexml_load_file(CONFIG_PATH) or die("Error: Cannot load config...");
+
     }
     
     public function initLinks() {
@@ -28,7 +29,7 @@ class Server {
     
     public function start() {
     include_once dirname(__FILE__).'/../html-templates/header.php';
-        include_once dirname(__FILE__).'/../html-templates/default.php';
+        include_once dirname(__FILE__).'/../pages/index/index.php';
     include_once dirname(__FILE__).'/../html-templates/footer.php';
     }
 

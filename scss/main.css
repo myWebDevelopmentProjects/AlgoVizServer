@@ -16,9 +16,9 @@ body {
     width: 100%; }
   body .current-instruction {
     background: #fffa90; }
-  body screen-error,
-  body error-title,
-  body btn-close-modal {
+  body screen_error,
+  body error_title,
+  body btn_close_modal {
     display: block;
     text-transform: uppercase;
     font-weight: bold;
@@ -27,17 +27,17 @@ body {
     border-radius: .4rem;
     text-align: center;
     margin: .2rem; }
-  body error-title-icon {
+  body error_title_icon {
     display: block;
-    background: url(../images/svg/error-title-icon.svg);
+    background: url(../images/svg/error_title_icon.svg);
     background-repeat: no-repeat;
     background-size: contain; }
-  body btn-close-icon {
+  body btn_close_icon {
     display: block;
-    background: url(../images/svg/btn-close-icon.svg);
+    background: url(../images/svg/btn_close_icon.svg);
     background-repeat: no-repeat;
     background-size: contain; }
-  body modal-window {
+  body modal_window {
     display: none;
     position: absolute;
     width: 100%;
@@ -48,7 +48,7 @@ body {
     bottom: 0;
     background: rgba(160, 160, 160, 0.5);
     z-index: 1; }
-    body modal-window screen-error {
+    body modal_window screen_error {
       display: block;
       height: auto;
       background: white;
@@ -57,7 +57,7 @@ body {
       margin: 10% auto 0 auto;
       z-index: 2;
       border-radius: 10px; }
-      body modal-window screen-error error-title {
+      body modal_window screen_error error_title {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -66,20 +66,20 @@ body {
         border-right: 0;
         border-left: 0;
         background: linear-gradient(#c8313f, #dfd9da); }
-        body modal-window screen-error error-title error-title-icon {
+        body modal_window screen_error error_title error_title_icon {
           width: 10%;
           height: 2rem; }
-        body modal-window screen-error error-title span {
+        body modal_window screen_error error_title span {
           color: white;
           width: 90%;
           text-align: center; }
-      body modal-window screen-error error-msg {
+      body modal_window screen_error error-msg {
         display: block;
         height: auto;
         max-height: 15rem;
         padding: 1rem;
         overflow-y: scroll; }
-      body modal-window screen-error btn-close-modal {
+      body modal_window screen_error btn_close_modal {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -87,13 +87,13 @@ body {
         margin: 1rem auto 1rem auto;
         cursor: pointer;
         background: linear-gradient(#92c83d, #d5df23); }
-        body modal-window screen-error btn-close-modal btn-close-icon {
+        body modal_window screen_error btn_close_modal btn_close_icon {
           width: 10%;
           height: 1rem; }
-        body modal-window screen-error btn-close-modal span {
+        body modal_window screen_error btn_close_modal span {
           width: 90%;
           text-align: center; }
-  body content-view {
+  body content_view {
     display: block;
     padding: .5rem;
     width: 1024px;
@@ -101,18 +101,18 @@ body {
     background: #c4c4c4;
     margin: 1rem auto;
     border-radius: 10px; }
-    body content-view help-btn,
-    body content-view back-btn,
-    body content-view screen-error,
-    body content-view error-title,
-    body content-view title-block,
-    body content-view data-structure,
-    body content-view data-pseudocode,
-    body content-view comments-block,
-    body content-view procedures-block,
-    body content-view control-btn,
-    body content-view view-page,
-    body content-view ul.algorithms_nav li {
+    body content_view help_btn,
+    body content_view back_btn,
+    body content_view screen_error,
+    body content_view error_title,
+    body content_view title_block,
+    body content_view data_structure,
+    body content_view data_pseudocode,
+    body content_view comments_block,
+    body content_view procedures_block,
+    body content_view control_btn,
+    body content_view view_page,
+    body content_view ul.algorithms_nav li {
       display: inline-block;
       text-transform: uppercase;
       font-weight: bold;
@@ -121,7 +121,7 @@ body {
       border-radius: .4rem;
       text-align: center;
       margin: .2rem; }
-    body content-view item {
+    body content_view item {
       display: inline-block;
       border: #666666 2px solid;
       padding: .4rem;
@@ -130,58 +130,58 @@ body {
       height: 30px;
       width: 30px;
       text-align: center; }
-    body content-view active-field {
+    body content_view active_field {
       display: block;
       overflow-y: scroll;
       word-wrap: break-word;
       text-align: justify;
       text-transform: none;
       padding: 0.5rem; }
-    body content-view double-arrow-left {
+    body content_view double_arrow_left {
       display: block;
-      background: url(../images/svg/double-arrow-left.svg);
+      background: url(../images/svg/double_arrow_left.svg);
       background-repeat: no-repeat;
       background-size: contain; }
-    body content-view arrow-down {
+    body content_view arrow_down {
       display: block;
-      background: url(../images/svg/arrow-down.svg);
+      background: url(../images/svg/arrow_down.svg);
       background-repeat: no-repeat;
       background-size: contain; }
-    body content-view help-btn-icon {
+    body content_view help_btn_icon {
       display: block;
-      background: url(../images/svg/help-btn-icon.svg);
+      background: url(../images/svg/help_btn_icon.svg);
       background-repeat: no-repeat;
       background-size: contain; }
-    body content-view .start > control-icon {
-      background: url(../images/svg/start-btn-icon.svg);
-      display: block;
-      background-repeat: no-repeat;
-      background-size: contain; }
-    body content-view .back > control-icon {
-      background: url(../images/svg/back-btn-icon.svg);
+    body content_view .start > control_icon {
+      background: url(../images/svg/start_btn_icon.svg);
       display: block;
       background-repeat: no-repeat;
       background-size: contain; }
-    body content-view .pause > control-icon {
-      background: url(../images/svg/pause-btn-icon.svg);
+    body content_view .back > control_icon {
+      background: url(../images/svg/back_btn_icon.svg);
       display: block;
       background-repeat: no-repeat;
       background-size: contain; }
-    body content-view .forward > control-icon {
-      background: url(../images/svg/forward-btn-icon.svg);
+    body content_view .pause > control_icon {
+      background: url(../images/svg/pause_btn_icon.svg);
       display: block;
       background-repeat: no-repeat;
       background-size: contain; }
-    body content-view .stop > control-icon {
-      background: url(../images/svg/stop-btn-icon.svg);
+    body content_view .forward > control_icon {
+      background: url(../images/svg/forward_btn_icon.svg);
       display: block;
       background-repeat: no-repeat;
       background-size: contain; }
-    body content-view view-header {
+    body content_view .stop > control_icon {
+      background: url(../images/svg/stop_btn_icon.svg);
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain; }
+    body content_view view_header {
       display: flex;
       align-items: center;
       justify-content: center; }
-      body content-view view-header back-btn {
+      body content_view view_header back_btn {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -189,60 +189,60 @@ body {
         text-align: center;
         cursor: pointer;
         background: linear-gradient(#92c83d, #d5df23); }
-        body content-view view-header back-btn double-arrow-left {
+        body content_view view_header back_btn double_arrow_left {
           width: 10%;
           height: 1rem; }
-        body content-view view-header back-btn span {
+        body content_view view_header back_btn span {
           width: 90%;
           text-align: center; }
-      body content-view view-header title-block {
+      body content_view view_header title_block {
         width: 70%;
         color: white;
         background: linear-gradient(#37b44a, #029345); }
-    body content-view view-page {
+    body content_view view_page {
       text-align: justify;
       text-transform: none;
       background: #fff;
       font-weight: normal; }
-      body content-view view-page p,
-      body content-view view-page ul {
+      body content_view view_page p,
+      body content_view view_page ul {
         margin: 0 0 .4rem 0; }
-      body content-view view-page li {
+      body content_view view_page li {
         list-style-position: inside; }
-      body content-view view-page ul.algorithms_nav {
+      body content_view view_page ul.algorithms_nav {
         margin: .4rem auto .4rem auto; }
-        body content-view view-page ul.algorithms_nav li {
+        body content_view view_page ul.algorithms_nav li {
           background: linear-gradient(#c8aa27, #c8bd4e);
           background-repeat: no-repeat;
           color: #fff;
           width: 50%;
           text-align: left; }
-          body content-view view-page ul.algorithms_nav li a {
+          body content_view view_page ul.algorithms_nav li a {
             text-align: left; }
-          body content-view view-page ul.algorithms_nav li a:visited,
-          body content-view view-page ul.algorithms_nav li a:link,
-          body content-view view-page ul.algorithms_nav li a:hover {
+          body content_view view_page ul.algorithms_nav li a:visited,
+          body content_view view_page ul.algorithms_nav li a:link,
+          body content_view view_page ul.algorithms_nav li a:hover {
             color: white;
             text-decoration: none; }
-          body content-view view-page ul.algorithms_nav li a:after {
+          body content_view view_page ul.algorithms_nav li a:after {
             display: inline-block;
-            background: url(../images/svg/double-arrow-right-white.svg);
+            background: url(../images/svg/double_arrow_left_white.svg);
             background-repeat: no-repeat;
             background-size: contain;
             content: "\00A0";
             width: 2rem;
             float: right; }
-    body content-view view-row {
+    body content_view view_row {
       display: flex;
       width: 100%;
       align-items: flex-start;
       justify-content: center; }
-      body content-view view-row data-structure {
+      body content_view view_row data_structure {
         height: 22rem;
         background: white;
         padding: 0;
         width: 70%; }
-        body content-view view-row data-structure title-block {
+        body content_view view_row data_structure title_block {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -251,13 +251,13 @@ body {
           border-right: 0;
           border-left: 0;
           background: linear-gradient(#92c83d, #d5df23); }
-          body content-view view-row data-structure title-block arrow-down {
+          body content_view view_row data_structure title_block arrow_down {
             width: 10%;
             height: 1rem; }
-          body content-view view-row data-structure title-block span {
+          body content_view view_row data_structure title_block span {
             width: 90%;
             text-align: center; }
-        body content-view view-row data-structure active-field {
+        body content_view view_row data_structure active_field {
           /* The animation code */ }
 @keyframes example {
   0% {
@@ -280,41 +280,41 @@ body {
     background-color: red;
     left: 0px;
     top: 0px; } }
-          body content-view view-row data-structure active-field item {
+          body content_view view_row data_structure active_field item {
             position: relative;
             animation-name: example;
             animation-duration: 4s; }
-      body content-view view-row right-block {
+      body content_view view_row right_block {
         width: 30%; }
-        body content-view view-row right-block comments-block {
+        body content_view view_row right_block comments_block {
           height: 17rem;
           background: white;
           padding: 0;
           width: 100%; }
-          body content-view view-row right-block comments-block title-block {
+          body content_view view_row right_block comments_block title_block {
             margin: 0;
             border-top: 0;
             border-right: 0;
             border-left: 0;
             background: linear-gradient(#92c83d, #d5df23); }
-          body content-view view-row right-block comments-block active-field {
+          body content_view view_row right_block comments_block active_field {
             height: 187px; }
-        body content-view view-row right-block procedures-block {
+        body content_view view_row right_block procedures_block {
           height: 17em;
           background: white;
           padding: 0;
           width: 98%; }
-          body content-view view-row right-block procedures-block title-block {
+          body content_view view_row right_block procedures_block title_block {
             margin: 0;
             border-top: 0;
             border-right: 0;
             border-left: 0;
             background: linear-gradient(#92c83d, #d5df23); }
-          body content-view view-row right-block procedures-block active-field {
+          body content_view view_row right_block procedures_block active_field {
             overflow-y: scroll; }
-            body content-view view-row right-block procedures-block active-field ul {
+            body content_view view_row right_block procedures_block active_field ul {
               height: 12rem; }
-              body content-view view-row right-block procedures-block active-field ul li {
+              body content_view view_row right_block procedures_block active_field ul li {
                 border: #666666 2px solid;
                 background: linear-gradient(#a1a2c8, #dad6df);
                 padding: .6rem;
@@ -323,24 +323,24 @@ body {
                 margin: .2rem;
                 color: #fff;
                 list-style: none; }
-              body content-view view-row right-block procedures-block active-field ul li.current {
+              body content_view view_row right_block procedures_block active_field ul li.current {
                 background: linear-gradient(#c87223, #c81722);
                 background-repeat: no-repeat;
                 color: #fff; }
-                body content-view view-row right-block procedures-block active-field ul li.current span:before {
+                body content_view view_row right_block procedures_block active_field ul li.current span:before {
                   display: inline-block;
-                  background: url(../images/svg/double-arrow-left-white.svg);
+                  background: url(../images/svg/double_arrow_left_white.svg);
                   background-repeat: no-repeat;
                   background-size: contain;
                   content: "\00A0";
                   width: 2rem;
                   float: left; }
-      body content-view view-row data-pseudocode {
+      body content_view view_row data_pseudocode {
         height: 17rem;
         background: white;
         padding: 0;
         width: 70%; }
-        body content-view view-row data-pseudocode title-block {
+        body content_view view_row data_pseudocode title_block {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -349,21 +349,21 @@ body {
           border-right: 0;
           border-left: 0;
           background: linear-gradient(#92c83d, #d5df23); }
-          body content-view view-row data-pseudocode title-block arrow-down {
+          body content_view view_row data_pseudocode title_block arrow_down {
             width: 10%;
             height: 1rem;
             height: 1rem; }
-          body content-view view-row data-pseudocode title-block span {
+          body content_view view_row data_pseudocode title_block span {
             width: 90%;
             text-align: center; }
-            body content-view view-row data-pseudocode title-block span .js_procedure_name {
+            body content_view view_row data_pseudocode title_block span .js_procedure_name {
               text-transform: none; }
-        body content-view view-row data-pseudocode active-field {
+        body content_view view_row data_pseudocode active_field {
           height: 210px; }
-          body content-view view-row data-pseudocode active-field ol {
+          body content_view view_row data_pseudocode active_field ol {
             list-style: none;
             padding: 3px; }
-            body content-view view-row data-pseudocode active-field ol li::before {
+            body content_view view_row data_pseudocode active_field ol li::before {
               content: counter(li);
               color: black;
               display: inline-block;
@@ -373,10 +373,10 @@ body {
               background-size: contain;
               text-align: center;
               font-weight: bold; }
-            body content-view view-row data-pseudocode active-field ol li {
+            body content_view view_row data_pseudocode active_field ol li {
               counter-increment: li;
               margin: 0 0 .5em 0; }
-      body content-view view-row help-btn {
+      body content_view view_row help_btn {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -384,13 +384,13 @@ body {
         text-align: center;
         cursor: pointer;
         background: linear-gradient(#92c83d, #d5df23); }
-        body content-view view-row help-btn help-btn-icon {
+        body content_view view_row help_btn help_btn_icon {
           width: 10%;
           height: 1rem; }
-        body content-view view-row help-btn span {
+        body content_view view_row help_btn span {
           width: 90%;
           text-align: center; }
-      body content-view view-row control-btn {
+      body content_view view_row control_btn {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -398,20 +398,20 @@ body {
         color: white;
         cursor: pointer;
         background: linear-gradient(#29a1db, #2e3e9a); }
-        body content-view view-row control-btn span {
+        body content_view view_row control_btn span {
           width: 90%;
           text-align: center; }
-        body content-view view-row control-btn control-icon {
+        body content_view view_row control_btn control_icon {
           width: 10%;
           height: 1rem;
           width: 1rem;
           margin: 0 .3rem 0 .2rem; }
-        body content-view view-row control-btn start-control-icon {
+        body content_view view_row control_btn start-control_icon {
           width: 10%;
           height: 1rem; }
-    body content-view view-footer {
+    body content_view view-footer {
       display: block; }
-      body content-view view-footer p {
+      body content_view view-footer p {
         font-size: .8rem; }
 
 /*# sourceMappingURL=main.css.map */
