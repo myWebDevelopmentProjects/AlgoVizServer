@@ -10,7 +10,7 @@
         <script src="/AlgoVizServer/js/jquery/jquery-ui.min.js"></script>
         <script src="/AlgoVizServer/js/app.js" defer></script>
         <script src="/AlgoVizServer/js/structure/element.js" defer></script>
-        <script src="/AlgoVizServer/js/settings.js" defer></script>
+        <script src="/AlgoVizServer/js/app.init_main_localization.js" defer></script>
         <script src="/AlgoVizServer/js/main.js" defer></script>
         <script src="/AlgoVizServer/js/main_ready.js" defer></script>
     </head>

@@ -29,14 +29,5 @@ class Server {
         }
         $this->algorithms_nav .= '</ul>';
     }
-    
-    public function start() {
-        header("Location: pages/index/");
-        /*
-    include_once dirname(__FILE__).'/../html-templates/header.php';
-        include_once dirname(__FILE__).'/../pages/index/index.php';
-    include_once dirname(__FILE__).'/../html-templates/footer.php';
-        */
-    }
 
 }

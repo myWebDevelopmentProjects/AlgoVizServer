@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <localization>
     <index>
-        <main_title>Візуалізація алгоритмів локального сортування BST-дерева</main_title>
-        <title_block_span>Додавання елемента до BST без балансування</title_block_span>
-        <back_btn_span>Повернутись</back_btn_span>
+        <view_header_title_block_span><![CDATA[Візуалізація алгоритмів локального сортування BST-дерева]]></view_header_title_block_span>
+        <data_structure_title><![CDATA[Додавання елемента до BST без балансування]]></data_structure_title>
+        <back_btn_span><![CDATA[ Повернутись ]]></back_btn_span>
+        <comments_block_title><![CDATA[Коментар до коду ]]></comments_block_title>
+        <data_pseudocode_title><![CDATA[ Виконувана процедура&nbsp;::&nbsp; ]]></data_pseudocode_title>
+        <procedures_block_title><![CDATA[ Процедури ]]></procedures_block_title>
+        <help_btn_title><![CDATA[ Довідка ]]></help_btn_title>
+        <control_btn_start_title><![CDATA[ Старт ]]></control_btn_start_title>
+        <control_btn_back_title><![CDATA[ назад ]]></control_btn_back_title>
+        <control_btn_pause_title><![CDATA[ ПАУЗА ]]></control_btn_pause_title>
+        <control_btn_forward_title><![CDATA[ вперед ]]></control_btn_forward_title>
+        <control_btn_stop_title><![CDATA[ СТОП ]]></control_btn_stop_title>
     </index>
 </localization>

@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <localization_main>
     <error>
-        <no_title_found>
-            <uk><![CDATA[ Не знайдено заголовку сторінки! ]]></uk>
-        </no_title_found>
-        <no_procedure_found>
-            <uk><![CDATA[ Не знайдено жодних процедур! ]]></uk>
-        </no_procedure_found>
+        <no_title_found><![CDATA[ Не знайдено заголовку сторінки! ]]></no_title_found>
+        <no_procedure_found><![CDATA[ Не знайдено жодних процедур! ]]></no_procedure_found>
     </error>
     <success>
-        <procedures_confirmed>
-            <uk><![CDATA[ Процедури знайдено!  ]]></uk>
-        </procedures_confirmed>
+        <procedures_confirmed><![CDATA[ Процедури знайдено!  ]]></procedures_confirmed>
     </success>
-    <copy_block>
-        <uk><![CDATA[ &copy;&nbsp;2018, Візуалізація алгоритмів ]]></uk>
-    </copy_block>
+    <copy_block><![CDATA[ &copy;&nbsp;2018, Візуалізація алгоритмів ]]></copy_block>
 </localization_main>

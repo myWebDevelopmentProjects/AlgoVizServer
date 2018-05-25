@@ -1,16 +1,16 @@
 (function (app, $) {
     app.init_localization = function(){
-        // Ініціалізація мовних налаштувань
-        $.when($.ajax(app.paths.local_path + "pages/index/localization.xml" )
+        // Р†РЅС–С†С–Р°Р»С–Р·Р°С†С–СЏ РјРѕРІРЅРёС… РЅР°Р»Р°С€С‚СѓРІР°РЅСЊ
+        $.when($.ajax("localization.xml" )
             .done (function(xml){
                 console.log("DATA", xml);
                 $localization_main = $(xml).find("localization");
-                app.dom_elements.title_block.html($localization_main.find("index").find("title_block").find(app.settings.default_lang).text());
-                app.dom_elements.content_of_page.html($localization_main.find("index").find("content_of_page").find(app.settings.default_lang).text());
+                app.dom_elements.title_block.html($localization_main.find("index").find("title_block").text());
+                app.dom_elements.content_of_page.html($localization_main.find("index").find("content_of_page").text());
             })
             .fail(function(error) {
                 var msg = "ERR :: \"localization.xml\" is not found!";
-                app.criticalErrorHandler(msg);
+                app.critical_error_handler(msg);
                 throw new Error(msg);
             })
         );

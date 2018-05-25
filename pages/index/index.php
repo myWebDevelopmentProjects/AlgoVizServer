@@ -1,13 +1,10 @@
-<?php
+﻿<?php
 include "../../classes/Server.php";
 //
-//$url_to_algorithms = dirname(__FILE__)."../algorithms";
-$url_to_algorithms = $_SERVER['PATH_INFO'].'/algorithms';
+$url_to_algorithms = "../../algorithms";
 //
-echo "GGGG" . dirname(__FILE__);
 $Server = new Server($url_to_algorithms);
 $initLinks = $GLOBALS['Server']->initLinks();
-$start = $GLOBALS['Server']->start();
 //
 ?>
 <?php include_once dirname(__FILE__) . '../../../html-templates/header.php';?>
@@ -18,7 +15,7 @@ $start = $GLOBALS['Server']->start();
             <view_page>
                 <content_of_page>&nbsp;</content_of_page>
 
-        <?= $GLOBALS['Server']->algorithms_nav;?>
+        <?= $Server->algorithms_nav;?>
             </view_page>
         </content_view>
         <script src="js/app.dom_elements.js" defer></script>

@@ -1,12 +1,12 @@
 'use strict';
-
+// Об'єкт Procedure - описує складові для кожної процедури
 var Procedure = function (name, current, args) {
     this.name = name;
     this.current = current;
     this.args = args;
     this.instructions = [];
 }
-
+// Об'єкт Instruction - описує складові для кожної іструкції
 function Instruction(code, commentText, commentAudio) {
     this.commentText = commentText;
     this.commentAudio = commentAudio;
@@ -14,14 +14,14 @@ function Instruction(code, commentText, commentAudio) {
 }
 
 (function (app, $) {
-    //
+    // Всі процедури, які будуть застосовуватись для анімації на сторінці
     app.procedures = [];
     // Поточна процедурв
     app.currentProcedure = {
         name: "",
         instruction: 0
     };
-    //
+    // Оновлення поля псевдокоду під час преходу між інструкціями
     app.updatePseudocodeField = function (procedure) {
         var self = this;
         var code = "<ol>";
@@ -33,8 +33,7 @@ function Instruction(code, commentText, commentAudio) {
             i++;
         }
         code += "</ol>";
-        console.log(code);
-        // 
+        // Виведення HTML-представлення псевдокоду
         self.element.pseudoCode.html(code);
         // Виведення першого коментаря стосовно початкової процедури алгоритму
         self.element.textComment.html(procedure.instructions[0].commentText);
@@ -43,53 +42,39 @@ function Instruction(code, commentText, commentAudio) {
         self.updateAudio(procedure.instructions[0].commentAudio);
         // self.element.audioComment.attr("src", procedure.instructions[0].commentAudio);
     };
-    //
+    // Запуск анімації після завантаження елементів сторінки
     app.start = function(){
         var self = this;
        console.log(this.procedures);
+        $("bst-structure root-bst").css({
+            "animation": "root_to_left_node_1_1 2s ease-in-out 0s forwards",
+        });
     }
-    //
+    // Ініціалізація створення списку процедур та вкладених в них інструкцій при завантаженні сторінки
     app.init = {
         start: function () {
             var self = this;
-            //
-            console.log("init app decrease");
-            //
-            $.ajax({
-                type: "GET",
-                url: "schema.xml",
-                dataType: "xml",
-                success: function (xml) {
-                    //
-                    var $page_title = $(xml).find("schema").find("main-settings").find("page-title");
+            // Ініціалізація процедур застосунка
+            $.when($.ajax("schema.xml" )
+                .done (function(xml){
+                   //
                     var $procedure = $(xml).find("schema").find("procedure");
-                    //
-                    self.parsePageTitle($page_title);
                     //
                     if ($procedure.length > 0) {
                         self.parseProcedures($procedure);
                     } else {
-                        app.criticalErrorHandler("Нема процедур!");
+                        app.critical_error_handler("Нема процедур!");
                     }
                     //
-                },
-                error: function (response) {
+                })
+                .fail(function(error) {
                     var msg = "ERR :: schema.xml is not found!";
-                    app.criticalErrorHandler(msg);
+                    app.critical_error_handler(msg);
                     throw new Error(msg);
-                }
-            });
+                })
+            );
         },
-        parsePageTitle: function($page_title){
-            console.log("title", $page_title.length);
-            if ($page_title.length === 0) {
-                console.log("не знайдено заголовку сторінки!");
-                app.criticalErrorHandler("не знайдено заголовку сторынки! ");
-                return false;
-            }
-            console.log("title", $page_title.text());
-            return false;
-        },
+        // Переведення всіх процедур до об'єкту app.procedures
         initProcedureDisplay: function () {
             var self = this;
             var procedureList = "<ul>";
@@ -106,6 +91,7 @@ function Instruction(code, commentText, commentAudio) {
             app.element.procedures.html(procedureList);
             app.element.procedures.find("li:nth-child(1)").addClass("current");
         },
+        // Переведення процедури в активну, тобто поточна процедура буде виділятись зміною елементів інтерфейсу
         makeProcedureCurrent: function(procedure){
             var self = this;
             var procedureList = "<ul>";
@@ -122,6 +108,8 @@ function Instruction(code, commentText, commentAudio) {
             app.element.procedures.html(procedureList);
             app.element.procedures.find("li:nth-child(1)").addClass("current");
         },
+        // Розбір кожної окремої процедури під час обробки файлу schema.xml,
+        // в якій зберігається опис візуалізації алгоритму
         parseProcedures: function ($procedure) {
             var self = this;
             $procedure.each(function () {
@@ -146,7 +134,7 @@ function Instruction(code, commentText, commentAudio) {
                     throw new Error("ERR :: " + error);
                 }
             });
-            // після завершення проходу по тсрутутрах процедур перехід до відображення початкової 
+            // після завершення проходу по струтутрах процедур перехід до відображення початкової
             // процедури алгоритму
             self.initProcedureDisplay();
         }

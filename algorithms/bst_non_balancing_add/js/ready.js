@@ -6,7 +6,7 @@ $(document).ready(function () {
     app.init.start();
     // ініціалізація подій для елементів сторінки
     $("back_btn").on("click", function () {
-        window.location.assign("/AlgoVizServer");
+        window.location.assign("/AlgoVizServer/");
     });
     //
     $("control_btn.start").on("click", function(){

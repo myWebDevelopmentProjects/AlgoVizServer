@@ -10,7 +10,7 @@
         });
     };
     // Помилки, без вирішення яких подальша робота застосунка неможлива
-    app.criticalErrorHandler = function (msg) {
+    app.critical_error_handler = function (msg) {
         var self = this;
         //
         self.element.error_msg.text(msg);
