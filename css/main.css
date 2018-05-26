@@ -131,15 +131,16 @@ body {
       width: 30px;
       text-align: center; }
     body content_view bst-item {
+      font-size: .8em;
       display: block;
       border: #666666 2px solid;
       padding: .4rem;
       border-radius: 20px;
-      border-radius: 20px;
-      height: 30px;
-      width: 30px;
+      width: 31px;
+      height: 31px;
       text-align: center;
-      position: absolute; }
+      position: absolute;
+      background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36.4 36.5'%3E%3CradialGradient id='a' cx='18.225' cy='30.598' r='18.27' gradientTransform='matrix(1 0 0 .9445 0 -10.644)' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='.044' stop-color='%232aaae2'/%3E%3Cstop offset='.292' stop-color='%232aaae2'/%3E%3Cstop offset='.487' stop-color='%23239cd8'/%3E%3Cstop offset='.893' stop-color='%23167ac0'/%3E%3Cstop offset='1' stop-color='%231072ba'/%3E%3C/radialGradient%3E%3Cellipse fill='url(%23a)' stroke='%234E4E4E' stroke-miterlimit='10' cx='18.2' cy='18.3' rx='17.7' ry='17.8'/%3E%3CradialGradient id='b' cx='17.822' cy='261.409' r='12.041' gradientTransform='matrix(1 0 0 .5169 0 -126.696)' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='1' stop-color='%23cdcccc' stop-opacity='.1'/%3E%3C/radialGradient%3E%3Cellipse fill='url(%23b)' cx='17.8' cy='8.4' rx='11.7' ry='6.4'/%3E%3C/svg%3Es"); }
     body content_view active_field {
       display: block;
       overflow-y: scroll;
@@ -329,24 +330,489 @@ body {
             body content_view view_row data_structure active_field bst-structure .root {
               left: 325px;
               right: 0; }
-            body content_view view_row data_structure active_field bst-structure ._1_1 {
-              left: 280px;
-              top: 32px; }
-            body content_view view_row data_structure active_field bst-structure ._1_2 {
-              left: 370px;
-              top: 32px; }
-            body content_view view_row data_structure active_field bst-structure ._2_1 {
-              left: 235px;
-              top: 64px; }
-            body content_view view_row data_structure active_field bst-structure ._2_2 {
-              left: 320px;
-              top: 64px; }
-            body content_view view_row data_structure active_field bst-structure ._2_3 {
-              left: 336px;
-              top: 64px; }
-            body content_view view_row data_structure active_field bst-structure ._2_4 {
-              left: 40px;
-              top: 64px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_0 {
+              left: 374px;
+              top: 10px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_1 {
+              left: 189px;
+              top: 52px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_1:before {
+              background: #000;
+              width: 156px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              border-radius: 10px;
+              top: -7px;
+              left: 31px;
+              -webkit-transform: rotate(-14deg);
+              transform: rotate(-14deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_2 {
+              left: 558px;
+              top: 52px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_2:before {
+              background: #000;
+              width: 156px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              border-radius: 10px;
+              top: -7px;
+              left: -153px;
+              -webkit-transform: rotate(14deg);
+              transform: rotate(14deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_3 {
+              left: 85px;
+              top: 103px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_3:before {
+              background: #000;
+              width: 79px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -13px;
+              left: 28px;
+              border-radius: 10px;
+              -webkit-transform: rotate(153deg);
+              transform: rotate(153deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_4 {
+              left: 265px;
+              top: 103px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_4:before {
+              background: #000;
+              width: 59px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -13px;
+              left: -49px;
+              border-radius: 10px;
+              -webkit-transform: rotate(30deg);
+              transform: rotate(30deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_5 {
+              left: 453px;
+              top: 103px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_5:before {
+              background: #000;
+              width: 84px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -13px;
+              left: 28px;
+              border-radius: 10px;
+              -webkit-transform: rotate(153deg);
+              transform: rotate(153deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_6 {
+              left: 636px;
+              top: 103px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_6:before {
+              background: #000;
+              width: 64px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -13px;
+              left: -54px;
+              border-radius: 10px;
+              -webkit-transform: rotate(30deg);
+              transform: rotate(30deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_7 {
+              left: 32px;
+              top: 147px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_7:before {
+              background: #000;
+              width: 35px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -9px;
+              left: 23px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-39deg);
+              transform: rotate(-39deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_8 {
+              left: 122px;
+              top: 147px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_8:before {
+              background: #000;
+              width: 24px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -9px;
+              left: -11px;
+              border-radius: 10px;
+              -webkit-transform: rotate(39deg);
+              transform: rotate(39deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_9 {
+              left: 215px;
+              top: 147px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_9:before {
+              background: #000;
+              width: 35px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -9px;
+              left: 23px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-39deg);
+              transform: rotate(-39deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_10 {
+              left: 310px;
+              top: 147px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_10:before {
+              background: #000;
+              width: 30px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -9px;
+              left: -19px;
+              border-radius: 10px;
+              -webkit-transform: rotate(39deg);
+              transform: rotate(39deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_11 {
+              left: 403px;
+              top: 147px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_11:before {
+              background: #000;
+              width: 32px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -9px;
+              left: 23px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-39deg);
+              transform: rotate(-39deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_12 {
+              left: 496px;
+              top: 147px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_12:before {
+              background: #000;
+              width: 29px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -9px;
+              left: -17px;
+              border-radius: 10px;
+              -webkit-transform: rotate(39deg);
+              transform: rotate(39deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_13 {
+              left: 587px;
+              top: 147px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_13:before {
+              background: #000;
+              width: 31px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -9px;
+              left: 23px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-39deg);
+              transform: rotate(-39deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_14 {
+              left: 681px;
+              top: 147px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_14:before {
+              background: #000;
+              width: 30px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -9px;
+              left: -19px;
+              border-radius: 10px;
+              -webkit-transform: rotate(39deg);
+              transform: rotate(39deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_15 {
+              left: 6px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_15:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: 23px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-55deg);
+              transform: rotate(-55deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_16 {
+              left: 53px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-items #bst_item_16:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: -7px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-127deg);
+              transform: rotate(-127deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_17 {
+              left: 97px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_17:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: 23px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-55deg);
+              transform: rotate(-55deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_18 {
+              left: 144px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_18:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: -7px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-127deg);
+              transform: rotate(-127deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_19 {
+              left: 190px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_19:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: 23px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-55deg);
+              transform: rotate(-55deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_20 {
+              left: 237px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_20:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: -7px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-127deg);
+              transform: rotate(-127deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_21 {
+              left: 286px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_21:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: 23px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-55deg);
+              transform: rotate(-55deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_22 {
+              left: 334px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_22:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: -7px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-127deg);
+              transform: rotate(-127deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_23 {
+              left: 380px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_23:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: 23px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-55deg);
+              transform: rotate(-55deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_24 {
+              left: 425px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_24:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: -7px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-127deg);
+              transform: rotate(-127deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_25 {
+              left: 472px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_25:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: 23px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-55deg);
+              transform: rotate(-55deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_26 {
+              left: 520px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_26:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: -7px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-127deg);
+              transform: rotate(-127deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_27 {
+              left: 564px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_27:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: 23px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-55deg);
+              transform: rotate(-55deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_28 {
+              left: 609px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_28:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: -7px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-127deg);
+              transform: rotate(-127deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_29 {
+              left: 657px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_29:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: 23px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-55deg);
+              transform: rotate(-55deg); }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_30 {
+              left: 703px;
+              top: 190px; }
+            body content_view view_row data_structure active_field bst-structure bst-item#bst_item_30:before {
+              background: #000;
+              width: 17px;
+              height: 2px;
+              display: block;
+              border: 1px solid #000;
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: -7px;
+              border-radius: 10px;
+              -webkit-transform: rotate(-127deg);
+              transform: rotate(-127deg); }
       body content_view view_row right_block {
         width: 30%; }
         body content_view view_row right_block comments_block {
