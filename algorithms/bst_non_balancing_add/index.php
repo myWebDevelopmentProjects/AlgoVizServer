@@ -9,7 +9,7 @@
             <active_field>
             <p>Елементи:
                 <item class="init">0</item>
-                <item class="init">1</item>
+                <item class="compare">1</item>
             </p>
                 <bst-structure>
                     <bst-item  id="bst_item_0" class="_0" >0</bst-item>

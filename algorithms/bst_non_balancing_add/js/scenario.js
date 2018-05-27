@@ -7,10 +7,11 @@ var Procedure = function (name, current, args) {
     this.instructions = [];
 }
 // Об'єкт Instruction - описує складові для кожної іструкції
-function Instruction(code, commentText, commentAudio) {
+function Instruction(code, commentText, commentAudio, functionDesc) {
     this.commentText = commentText;
     this.commentAudio = commentAudio;
     this.code = code;
+    this.function = function () { eval(functionDesc); };
 }
 
 (function (app, $) {
@@ -45,7 +46,7 @@ function Instruction(code, commentText, commentAudio) {
     // Запуск анімації після завантаження елементів сторінки
     app.start = function(){
         var self = this;
-       console.log(this.procedures);
+       console.log(this.procedures[0].instructions[0].function());
         $("bst-structure root-bst").css({
             "animation": "root_to_left_node_1_1 2s ease-in-out 0s forwards",
         });
@@ -127,7 +128,8 @@ function Instruction(code, commentText, commentAudio) {
                         var commentText = typeof $(this).find("comment-text") !== "undefined" ? $(this).find("comment-text").text() : "empty";
                         var commentAudio = typeof $(this).find("comment-audio").attr("url") !== "undefined" ? $(this).find("comment-audio").attr("url") : "empty";
                         var codePart = typeof $(this).find("code") ? $(this).find("code").text() : "empty";
-                        app.procedures[app.procedures.length - 1].instructions.push(new Instruction(codePart, commentText, commentAudio));
+                        var functionDesc = typeof $(this).find("code") ? $(this).find("function").text() : "empty";
+                        app.procedures[app.procedures.length - 1].instructions.push(new Instruction(codePart, commentText, commentAudio, functionDesc));
                     });
                 } catch (error) {
                     app.errorHandler("ERR :: " + error);

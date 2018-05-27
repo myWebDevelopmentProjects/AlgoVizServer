@@ -5,6 +5,15 @@
             <comment-text>1 Метод добавления нового элемента в BST-дерево</comment-text>
             <comment-audio url="/audio/Matt Skyer - Our Galaxy.mp3"/>
             <code><![CDATA[ New_Elem <- call new Node(Object) ]]></code>
+            <function>
+                <![CDATA[
+                var  New_Elem = $("data_structure active_field item:nth-child(1)");
+                var BST = $("bst-structure");
+                console.log("New_Elem as Root", New_Elem.html());
+                BST.find("._0").html(New_Elem.html()).show();
+                New_Elem.hide();
+                ]]>
+            </function>
         </instruction>
         <instruction>
             <comment-text>2 Метод добавления нового элемента в BST-дерево</comment-text>

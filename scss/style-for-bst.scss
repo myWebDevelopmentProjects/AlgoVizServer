@@ -1,3 +1,42 @@
+$x0_level0:            50%;
+$x0_level1:           169px;
+$xCoefLeft_level1:    323px;
+$x0_level2:           75px;
+$xCoefLeft_level2:    163px;
+$x0_level3:           24px;
+$xCoefLeft_level3:    82px;
+$x0_level4:           0px;
+$xCoefLeft_level4:    41px;
+
+$bst_item_display: none;
+$bst_item_background_normal:  url(../images/svg/bst_item_normal.svg);
+
+$level_4_left_item_before_background: #000;
+$level_4_left_item_before_width: 17px;
+$level_4_left_item_before_height: 2px;
+$level_4_left_item_before_display: block;
+$level_4_left_item_before_border: 1px solid #000;
+$level_4_left_item_before_content: "";
+$level_4_left_item_before_position: absolute;
+$level_4_left_item_before_top: -11px;
+$level_4_left_item_before_left: 13px;
+$level_4_left_item_before_border-radius: 10px;
+$level_4_left_item_before_-webkit-transform: rotate(-55deg);
+$level_4_left_item_before_transform: rotate(-55deg);
+
+$level_4_right_item_before_background: #000;
+$level_4_right_item_before_width: 17px;
+$level_4_right_item_before_height: 2px;
+$level_4_right_item_before_display: block;
+$level_4_right_item_before_border: 1px solid #000;
+$level_4_right_item_before_content: "";
+$level_4_right_item_before_position: absolute;
+$level_4_right_item_before_top: -11px;
+$level_4_right_item_before_left: 0px;
+$level_4_right_item_before_border-radius: 10px;
+$level_4_right_item_before_-webkit-transform: rotate(-127deg);
+$level_4_right_item_before_transform: rotate(-127deg);
+
 bst-structure {
     display: block;
     position: relative;
@@ -5,25 +44,25 @@ bst-structure {
         left: 325px;
         right: 0;
     }
-    bst-item#bst_item_0{left:374px;top:10px}
-    bst-item#bst_item_1{left:189px;top:52px}
+    bst-item#bst_item_0{
+        left: $x0_level0;
+        top: 10px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
+    bst-item#bst_item_1{
+        left: $x0_level1;
+        top:52px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_1:before {
         background:#000;
-        width:156px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        border-radius:10px;
-        top:-7px;left:31px;
-        -webkit-transform:rotate(-14deg);
-        transform:rotate(-14deg)
-    }
-    bst-item#bst_item_2{left:558px;top:52px}
-    bst-item#bst_item_2:before{
-        background:#000;
-        width:156px;
+        width: 139px;
         height:2px;
         display:block;
         border:1px solid #000;
@@ -31,29 +70,65 @@ bst-structure {
         position:absolute;
         border-radius:10px;
         top:-7px;
-        left:-153px;
-        -webkit-transform:rotate(14deg);
-        transform:rotate(14deg)
+        left: 27px;
+        -webkit-transform:rotate(-14deg);
+        transform:rotate(-14deg)
     }
-    bst-item#bst_item_3{left:85px;top:103px}
-    bst-item#bst_item_3:before{
+    bst-item#bst_item_2{
+        left:$x0_level1 + $xCoefLeft_level1 * 1;
+        top:52px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
+    bst-item#bst_item_2:before{
         background:#000;
-        width:79px;
+        width: 133px;
         height:2px;
         display:block;
         border:1px solid #000;
         content:"";
         position:absolute;
-        top:-13px;
-        left:28px;
         border-radius:10px;
-        -webkit-transform:rotate(153deg);
-        transform:rotate(153deg)
+        top: -7px;
+        left: -133px;
+        -webkit-transform:rotate(14deg);
+        transform:rotate(14deg)
     }
-    bst-item#bst_item_4{left:265px;top:103px}
+    bst-item#bst_item_3{
+        left: $x0_level2;
+        top: 103px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
+    bst-item#bst_item_3:before{
+        background: #000;
+        width: 74px;
+        height: 2px;
+        display: block;
+        border: 1px solid #000;
+        content: "";
+        position: absolute;
+        top: -13px;
+        left: 23px;
+        border-radius: 10px;
+        -webkit-transform: rotate(153deg);
+        transform: rotate(153deg);
+    }
+    bst-item#bst_item_4{
+        left: $x0_level2 + $xCoefLeft_level2 * 1;
+        top:103px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_4:before{
         background:#000;
-        width:59px;
+        width:55px;
         height:2px;
         display:block;
         border:1px solid #000;
@@ -64,25 +139,40 @@ bst-structure {
         border-radius:10px;
         -webkit-transform:rotate(30deg);
         transform:rotate(30deg)
-    }bst-item#bst_item_5{ left:453px;	top:103px}
-    bst-item#bst_item_5:before{
-        background:#000;
-        width:84px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-13px;
-        left:28px;
-        border-radius:10px;
-        -webkit-transform:rotate(153deg);
-        transform:rotate(153deg)
     }
-    bst-item#bst_item_6{left:636px;top:103px}
+    bst-item#bst_item_5{
+        left: $x0_level2 + $xCoefLeft_level2 * 2;
+        top:103px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
+    bst-item#bst_item_5:before{
+        background: #000;
+        width: 74px;
+        height: 2px;
+        display: block;
+        border: 1px solid #000;
+        content: "";
+        position: absolute;
+        top: -13px;
+        left: 23px;
+        border-radius: 10px;
+        -webkit-transform: rotate(153deg);
+        transform: rotate(153deg);
+    }
+    bst-item#bst_item_6 {
+        left: $x0_level2 + $xCoefLeft_level2 * 3;
+        top: 103px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_6:before{
         background:#000;
-        width:64px;
+        width:55px;
         height:2px;
         display:block;
         border:1px solid #000;
@@ -94,7 +184,14 @@ bst-structure {
         -webkit-transform:rotate(30deg);
         transform:rotate(30deg)
     }
-    bst-item#bst_item_7{left:32px;top:147px}
+    bst-item#bst_item_7 {
+        left: $x0_level3;
+        top:147px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_7:before{
         background:#000;
         width:35px;
@@ -109,22 +206,36 @@ bst-structure {
         -webkit-transform:rotate(-39deg);
         transform:rotate(-39deg)
     }
-    bst-item#bst_item_8{left:122px;top:147px}
-    bst-item#bst_item_8:before{
-        background:#000;
-        width:24px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-9px;
-        left:-11px;
-        border-radius:10px;
-        -webkit-transform:rotate(39deg);
-        transform:rotate(39deg)
+    bst-item#bst_item_8 {
+        left: $x0_level3 + $xCoefLeft_level3 * 1;
+        top: 147px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
     }
-    bst-item#bst_item_9{left:215px;top:147px}
+    bst-item#bst_item_8:before{
+        background: #000;
+        width: 25px;
+        height: 2px;
+        display: block;
+        border: 1px solid #000;
+        content: "";
+        position: absolute;
+        top: -12px;
+        left: -15px;
+        border-radius: 10px;
+        -webkit-transform: rotate(39deg);
+        transform: rotate(39deg);
+    }
+    bst-item#bst_item_9 {
+        left: $x0_level3 + $xCoefLeft_level3 * 2;
+        top: 147px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_9:before{
         background:#000;
         width:35px;
@@ -139,22 +250,36 @@ bst-structure {
         -webkit-transform:rotate(-39deg);
         transform:rotate(-39deg)
     }
-    bst-item#bst_item_10{left:310px;top:147px}
-    bst-item#bst_item_10:before{
-        background:#000;
-        width:30px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-9px;
-        left:-19px;
-        border-radius:10px;
-        -webkit-transform:rotate(39deg);
-        transform:rotate(39deg)
+    bst-item#bst_item_10 {
+        left: $x0_level3 + $xCoefLeft_level3 * 3;
+        top: 147px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
     }
-    bst-item#bst_item_11{left:403px;top:147px}
+    bst-item#bst_item_10:before{
+        background: #000;
+        width: 24px;
+        height: 2px;
+        display: block;
+        border: 1px solid #000;
+        content: "";
+        position: absolute;
+        top: -12px;
+        left: -14px;
+        border-radius: 10px;
+        -webkit-transform: rotate(39deg);
+        transform: rotate(39deg);
+    }
+    bst-item#bst_item_11 {
+        left: $x0_level3 + $xCoefLeft_level3 * 4;
+        top:147px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_11:before{
         background:#000;
         width:32px;
@@ -169,10 +294,17 @@ bst-structure {
         -webkit-transform:rotate(-39deg);
         transform:rotate(-39deg)
     }
-    bst-item#bst_item_12{left:496px;top:147px}
+    bst-item#bst_item_12 {
+        left: $x0_level3 + $xCoefLeft_level3 * 5;
+        top: 147px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_12:before{
         background:#000;
-        width:29px;
+        width:25px;
         height:2px;
         display:block;
         border:1px solid #000;
@@ -184,7 +316,14 @@ bst-structure {
         -webkit-transform:rotate(39deg);
         transform:rotate(39deg)
     }
-    bst-item#bst_item_13{left:587px;top:147px}
+    bst-item#bst_item_13 {
+        left: $x0_level3 + $xCoefLeft_level3 * 6;
+        top:147px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_13:before{
         background:#000;
         width:31px;
@@ -199,10 +338,17 @@ bst-structure {
         -webkit-transform:rotate(-39deg);
         transform:rotate(-39deg)
     }
-    bst-item#bst_item_14{left:681px;top:147px}
+    bst-item#bst_item_14 {
+        left: $x0_level3 + $xCoefLeft_level3 * 7;
+        top: 147px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_14:before{
         background:#000;
-        width:30px;
+        width:26px;
         height:2px;
         display:block;
         border:1px solid #000;
@@ -214,244 +360,356 @@ bst-structure {
         -webkit-transform:rotate(39deg);
         transform:rotate(39deg)
     }
-    bst-item#bst_item_15{left:6px;top:190px}
+    bst-item#bst_item_15 {
+        left: $x0_level4;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_15:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:23px;
-        border-radius:10px;
-        -webkit-transform:rotate(-55deg);
-        transform:rotate(-55deg)
+        background: $level_4_left_item_before_background;
+        width: $level_4_left_item_before_width;
+        height: $level_4_left_item_before_height;
+        display: $level_4_left_item_before_display;
+        border: $level_4_left_item_before_border;
+        content: $level_4_left_item_before_content;
+        position: $level_4_left_item_before_position;
+        top: $level_4_left_item_before_top;
+        left: $level_4_left_item_before_left;
+        border-radius: $level_4_left_item_before_border-radius;
+        -webkit-transform: $level_4_left_item_before_-webkit-transform;
+        transform: $level_4_left_item_before_transform;
     }
-    bst-item#bst_item_16{left:53px;top:190px}
-    bst-items   #bst_item_16:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:-7px;
-        border-radius:10px;
-        -webkit-transform:rotate(-127deg);
-        transform:rotate(-127deg)
+    bst-item#bst_item_16 {
+        left: $x0_level4 + $xCoefLeft_level4 * 1;
+        top: 190px;
+        background: $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
     }
-    bst-item#bst_item_17{left:97px;top:190px}
+    bst-item#bst_item_16:before{
+        background: $level_4_right_item_before_background;
+        width: $level_4_right_item_before_width;
+        height: $level_4_right_item_before_height;
+        display: $level_4_right_item_before_display;
+        border: $level_4_right_item_before_border;
+        content: $level_4_right_item_before_content;
+        position: $level_4_right_item_before_position;
+        top: $level_4_right_item_before_top;
+        left: $level_4_right_item_before_left;
+        border-radius: $level_4_right_item_before_border-radius;
+        -webkit-transform: $level_4_right_item_before_-webkit-transform;
+        transform: $level_4_right_item_before_transform;
+    }
+    bst-item#bst_item_17 {
+        left: $x0_level4 + $xCoefLeft_level4 * 2;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_17:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:23px;
-        border-radius:10px;
-        -webkit-transform:rotate(-55deg);
-        transform:rotate(-55deg)
+        background: $level_4_left_item_before_background;
+        width: $level_4_left_item_before_width;
+        height: $level_4_left_item_before_height;
+        display: $level_4_left_item_before_display;
+        border: $level_4_left_item_before_border;
+        content: $level_4_left_item_before_content;
+        position: $level_4_left_item_before_position;
+        top: $level_4_left_item_before_top;
+        left: $level_4_left_item_before_left;
+        border-radius: $level_4_left_item_before_border-radius;
+        -webkit-transform: $level_4_left_item_before_-webkit-transform;
+        transform: $level_4_left_item_before_transform;
     }
-    bst-item#bst_item_18{left:144px;top:190px}
+    bst-item#bst_item_18 {
+        left: $x0_level4 + $xCoefLeft_level4 * 3;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_18:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:-7px;
-        border-radius:10px;
-        -webkit-transform:rotate(-127deg);
-        transform:rotate(-127deg)
+        background: $level_4_right_item_before_background;
+        width: $level_4_right_item_before_width;
+        height: $level_4_right_item_before_height;
+        display: $level_4_right_item_before_display;
+        border: $level_4_right_item_before_border;
+        content: $level_4_right_item_before_content;
+        position: $level_4_right_item_before_position;
+        top: $level_4_right_item_before_top;
+        left: $level_4_right_item_before_left;
+        border-radius: $level_4_right_item_before_border-radius;
+        -webkit-transform: $level_4_right_item_before_-webkit-transform;
+        transform: $level_4_right_item_before_transform;
     }
-    bst-item#bst_item_19{left:190px;top:190px}
+    bst-item#bst_item_19 {
+        left: $x0_level4 + $xCoefLeft_level4 * 4;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_19:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:23px;
-        border-radius:10px;
-        -webkit-transform:rotate(-55deg);
-        transform:rotate(-55deg)
+        background: $level_4_left_item_before_background;
+        width: $level_4_left_item_before_width;
+        height: $level_4_left_item_before_height;
+        display: $level_4_left_item_before_display;
+        border: $level_4_left_item_before_border;
+        content: $level_4_left_item_before_content;
+        position: $level_4_left_item_before_position;
+        top: $level_4_left_item_before_top;
+        left: $level_4_left_item_before_left;
+        border-radius: $level_4_left_item_before_border-radius;
+        -webkit-transform: $level_4_left_item_before_-webkit-transform;
+        transform: $level_4_left_item_before_transform;
     }
-    bst-item#bst_item_20{left:237px;top:190px}
-    bst-item#bst_item_20:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:-7px;
-        border-radius:10px;
-        -webkit-transform:rotate(-127deg);
-        transform:rotate(-127deg)
+    bst-item#bst_item_20 {
+        left: $x0_level4 + $xCoefLeft_level4 * 5;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
     }
-    bst-item#bst_item_21{left:286px;top:190px}
+    bst-item#bst_item_20:before {
+        background: $level_4_right_item_before_background;
+        width: $level_4_right_item_before_width;
+        height: $level_4_right_item_before_height;
+        display: $level_4_right_item_before_display;
+        border: $level_4_right_item_before_border;
+        content: $level_4_right_item_before_content;
+        position: $level_4_right_item_before_position;
+        top: $level_4_right_item_before_top;
+        left: $level_4_right_item_before_left;
+        border-radius: $level_4_right_item_before_border-radius;
+        -webkit-transform: $level_4_right_item_before_-webkit-transform;
+        transform: $level_4_right_item_before_transform;
+    }
+    bst-item#bst_item_21 {
+        left: $x0_level4 + $xCoefLeft_level4 * 6;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_21:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:23px;
-        border-radius:10px;
-        -webkit-transform:rotate(-55deg);
-        transform:rotate(-55deg)
+        background: $level_4_left_item_before_background;
+        width: $level_4_left_item_before_width;
+        height: $level_4_left_item_before_height;
+        display: $level_4_left_item_before_display;
+        border: $level_4_left_item_before_border;
+        content: $level_4_left_item_before_content;
+        position: $level_4_left_item_before_position;
+        top: $level_4_left_item_before_top;
+        left: $level_4_left_item_before_left;
+        border-radius: $level_4_left_item_before_border-radius;
+        -webkit-transform: $level_4_left_item_before_-webkit-transform;
+        transform: $level_4_left_item_before_transform;
     }
-    bst-item#bst_item_22{left:334px;top:190px}
+    bst-item#bst_item_22 {
+        left: $x0_level4 + $xCoefLeft_level4 * 7;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_22:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:-7px;
-        border-radius:10px;
-        -webkit-transform:rotate(-127deg);
-        transform:rotate(-127deg)
+        background: $level_4_right_item_before_background;
+        width: $level_4_right_item_before_width;
+        height: $level_4_right_item_before_height;
+        display: $level_4_right_item_before_display;
+        border: $level_4_right_item_before_border;
+        content: $level_4_right_item_before_content;
+        position: $level_4_right_item_before_position;
+        top: $level_4_right_item_before_top;
+        left: $level_4_right_item_before_left;
+        border-radius: $level_4_right_item_before_border-radius;
+        -webkit-transform: $level_4_right_item_before_-webkit-transform;
+        transform: $level_4_right_item_before_transform;
     }
-    bst-item#bst_item_23{left:380px;top:190px}
+    bst-item#bst_item_23 {
+        left: $x0_level4 + $xCoefLeft_level4 * 8;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_23:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:23px;
-        border-radius:10px;
-        -webkit-transform:rotate(-55deg);
-        transform:rotate(-55deg)
+        background: $level_4_left_item_before_background;
+        width: $level_4_left_item_before_width;
+        height: $level_4_left_item_before_height;
+        display: $level_4_left_item_before_display;
+        border: $level_4_left_item_before_border;
+        content: $level_4_left_item_before_content;
+        position: $level_4_left_item_before_position;
+        top: $level_4_left_item_before_top;
+        left: $level_4_left_item_before_left;
+        border-radius: $level_4_left_item_before_border-radius;
+        -webkit-transform: $level_4_left_item_before_-webkit-transform;
+        transform: $level_4_left_item_before_transform;
     }
-    bst-item#bst_item_24{left:425px;top:190px}
+    bst-item#bst_item_24 {
+        left: $x0_level4 + $xCoefLeft_level4 * 9;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_24:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:-7px;
-        border-radius:10px;
-        -webkit-transform:rotate(-127deg);
-        transform:rotate(-127deg)
+        background: $level_4_right_item_before_background;
+        width: $level_4_right_item_before_width;
+        height: $level_4_right_item_before_height;
+        display: $level_4_right_item_before_display;
+        border: $level_4_right_item_before_border;
+        content: $level_4_right_item_before_content;
+        position: $level_4_right_item_before_position;
+        top: $level_4_right_item_before_top;
+        left: $level_4_right_item_before_left;
+        border-radius: $level_4_right_item_before_border-radius;
+        -webkit-transform: $level_4_right_item_before_-webkit-transform;
+        transform: $level_4_right_item_before_transform;
     }
-    bst-item#bst_item_25{left:472px;top:190px}
+    bst-item#bst_item_25 {
+        left: $x0_level4 + $xCoefLeft_level4 * 10;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_25:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:23px;
-        border-radius:10px;
-        -webkit-transform:rotate(-55deg);
-        transform:rotate(-55deg)
+        background: $level_4_left_item_before_background;
+        width: $level_4_left_item_before_width;
+        height: $level_4_left_item_before_height;
+        display: $level_4_left_item_before_display;
+        border: $level_4_left_item_before_border;
+        content: $level_4_left_item_before_content;
+        position: $level_4_left_item_before_position;
+        top: $level_4_left_item_before_top;
+        left: $level_4_left_item_before_left;
+        border-radius: $level_4_left_item_before_border-radius;
+        -webkit-transform: $level_4_left_item_before_-webkit-transform;
+        transform: $level_4_left_item_before_transform;
     }
-    bst-item#bst_item_26{left:520px;top:190px}
+    bst-item#bst_item_26{
+        left: $x0_level4 + $xCoefLeft_level4 * 11;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_26:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:-7px;
-        border-radius:10px;
-        -webkit-transform:rotate(-127deg);
-        transform:rotate(-127deg)
+        background: $level_4_right_item_before_background;
+        width: $level_4_right_item_before_width;
+        height: $level_4_right_item_before_height;
+        display: $level_4_right_item_before_display;
+        border: $level_4_right_item_before_border;
+        content: $level_4_right_item_before_content;
+        position: $level_4_right_item_before_position;
+        top: $level_4_right_item_before_top;
+        left: $level_4_right_item_before_left;
+        border-radius: $level_4_right_item_before_border-radius;
+        -webkit-transform: $level_4_right_item_before_-webkit-transform;
+        transform: $level_4_right_item_before_transform;
     }
-    bst-item#bst_item_27{left:564px;top:190px}
+    bst-item#bst_item_27 {
+        left: $x0_level4 + $xCoefLeft_level4 * 12;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_27:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:23px;
-        border-radius:10px;
-        -webkit-transform:rotate(-55deg);
-        transform:rotate(-55deg)
+        background: $level_4_left_item_before_background;
+        width: $level_4_left_item_before_width;
+        height: $level_4_left_item_before_height;
+        display: $level_4_left_item_before_display;
+        border: $level_4_left_item_before_border;
+        content: $level_4_left_item_before_content;
+        position: $level_4_left_item_before_position;
+        top: $level_4_left_item_before_top;
+        left: $level_4_left_item_before_left;
+        border-radius: $level_4_left_item_before_border-radius;
+        -webkit-transform: $level_4_left_item_before_-webkit-transform;
+        transform: $level_4_left_item_before_transform;
     }
-    bst-item#bst_item_28{left:609px;top:190px}
+    bst-item#bst_item_28 {
+        left: $x0_level4 + $xCoefLeft_level4 * 13;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_28:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:-7px;
-        border-radius:10px;
-        -webkit-transform:rotate(-127deg);
-        transform:rotate(-127deg)
+        background: $level_4_right_item_before_background;
+        width: $level_4_right_item_before_width;
+        height: $level_4_right_item_before_height;
+        display: $level_4_right_item_before_display;
+        border: $level_4_right_item_before_border;
+        content: $level_4_right_item_before_content;
+        position: $level_4_right_item_before_position;
+        top: $level_4_right_item_before_top;
+        left: $level_4_right_item_before_left;
+        border-radius: $level_4_right_item_before_border-radius;
+        -webkit-transform: $level_4_right_item_before_-webkit-transform;
+        transform: $level_4_right_item_before_transform;
     }
-    bst-item#bst_item_29{left:657px;top:190px}
+    bst-item#bst_item_29 {
+        left: $x0_level4 + $xCoefLeft_level4 * 14;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_29:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:23px;
-        border-radius:10px;
-        -webkit-transform:rotate(-55deg);
-        transform:rotate(-55deg)
+        background: $level_4_left_item_before_background;
+        width: $level_4_left_item_before_width;
+        height: $level_4_left_item_before_height;
+        display: $level_4_left_item_before_display;
+        border: $level_4_left_item_before_border;
+        content: $level_4_left_item_before_content;
+        position: $level_4_left_item_before_position;
+        top: $level_4_left_item_before_top;
+        left: $level_4_left_item_before_left;
+        border-radius: $level_4_left_item_before_border-radius;
+        -webkit-transform: $level_4_left_item_before_-webkit-transform;
+        transform: $level_4_left_item_before_transform;
     }
-    bst-item#bst_item_30{left:703px;top:190px}
+    bst-item#bst_item_30 {
+        left: $x0_level4 + $xCoefLeft_level4 * 15;
+        top: 190px;
+        background:  $bst_item_background_normal;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: $bst_item_display;
+    }
     bst-item#bst_item_30:before{
-        background:#000;
-        width:17px;
-        height:2px;
-        display:block;
-        border:1px solid #000;
-        content:"";
-        position:absolute;
-        top:-5px;
-        left:-7px;
-        border-radius:10px;
-        -webkit-transform:rotate(-127deg);
-        transform:rotate(-127deg)
+        background: $level_4_right_item_before_background;
+        width: $level_4_right_item_before_width;
+        height: $level_4_right_item_before_height;
+        display: $level_4_right_item_before_display;
+        border: $level_4_right_item_before_border;
+        content: $level_4_right_item_before_content;
+        position: $level_4_right_item_before_position;
+        top: $level_4_right_item_before_top;
+        left: $level_4_right_item_before_left;
+        border-radius: $level_4_right_item_before_border-radius;
+        -webkit-transform: $level_4_right_item_before_-webkit-transform;
+        transform: $level_4_right_item_before_transform;
     }
 }

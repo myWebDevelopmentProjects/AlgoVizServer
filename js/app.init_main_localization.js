@@ -5,6 +5,7 @@
             .done (function(xml){
                 console.log("DATA", xml);
                 $localization_main = $(xml).find("localization-main");
+                app.element.copy_block.html($(xml).find("copy_block").text());
             })
             .fail(function(error) {
                 var msg = "ERR :: \"localization_main.xml\" is not found!";
