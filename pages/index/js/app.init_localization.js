@@ -10,7 +10,7 @@
             })
             .fail(function(error) {
                 var msg = "ERR :: \"localization.xml\" is not found!";
-                app.critical_error_handler(msg);
+                app.error_handlers.critical_error_handler(msg);
                 throw new Error(msg);
             })
         );

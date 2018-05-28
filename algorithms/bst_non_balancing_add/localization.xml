@@ -13,5 +13,6 @@
         <control_btn_pause_title><![CDATA[ ПАУЗА ]]></control_btn_pause_title>
         <control_btn_forward_title><![CDATA[ вперед ]]></control_btn_forward_title>
         <control_btn_stop_title><![CDATA[ СТОП ]]></control_btn_stop_title>
+        <no_procedures_found><![CDATA[ Нема процедур! ]]></no_procedures_found>
     </index>
 </localization>

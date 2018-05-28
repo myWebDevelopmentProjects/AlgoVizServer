@@ -8,10 +8,15 @@
         data_pseudocode_title: $("data_pseudocode title_block span.localization"),
         procedures_block_title: $("procedures_block title_block span"),
         help_btn_title: $("help_btn span"),
+        control_btn_start: $("control_btn.start"),
         control_btn_start_title: $("control_btn.start span"),
+        control_btn_back: $("control_btn.back"),
         control_btn_back_title: $("control_btn.back span"),
+        control_btn_pause: $("control_btn.pause"),
         control_btn_pause_title: $("control_btn.pause span"),
+        control_btn_forward: $("control_btn.forward"),
         control_btn_forward_title: $("control_btn.forward span"),
+        control_btn_stop: $("control_btn.stop"),
         control_btn_stop_title: $("control_btn.stop span")
 
     };

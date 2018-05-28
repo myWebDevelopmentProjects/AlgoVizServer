@@ -2,14 +2,13 @@
 $(document).ready(function () {
     // Ініціалізація мовних налаштувань
     app.init_localization();
-    //
+    // Початок розбору сценарію
     app.init.start();
-    // ініціалізація подій для елементів сторінки
+    // Активація елементів керування анімацією алгоритмів
+    app.controls.init();
+    // Ініціалізація подій для елементів сторінки
     $("back_btn").on("click", function () {
         window.location.assign("/AlgoVizServer/");
     });
     //
-    $("control_btn.start").on("click", function(){
-        app.start();
-    });
 });

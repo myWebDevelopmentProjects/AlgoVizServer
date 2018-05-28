@@ -13,17 +13,25 @@ function Instruction(code, commentText, commentAudio, functionDesc) {
     this.code = code;
     this.function = function () { eval(functionDesc); };
 }
+// Об'єкт Node - описує вузол двійкового дерева
+function Node (value) {
+    this.value = value;
+    this.leftBranch = null;
+    this.rightBranch = null;
+}
 
+// Опис властивостей та методів об'єкту застсоунка, що буде розбирати
+// опис анімації, який задано в файлі schema.xml
 (function (app, $) {
     // Всі процедури, які будуть застосовуватись для анімації на сторінці
     app.procedures = [];
     // Поточна процедурв
-    app.currentProcedure = {
+    app.current_procedure = {
         name: "",
         instruction: 0
     };
     // Оновлення поля псевдокоду під час преходу між інструкціями
-    app.updatePseudocodeField = function (procedure) {
+    app.update_pseudocode_field = function (procedure, instruction_num) {
         var self = this;
         var code = "<ol>";
         console.log(procedure);
@@ -35,26 +43,18 @@ function Instruction(code, commentText, commentAudio, functionDesc) {
         }
         code += "</ol>";
         // Виведення HTML-представлення псевдокоду
-        self.element.pseudoCode.html(code);
+        self.dom_element.pseudoCode.html(code);
         // Виведення першого коментаря стосовно початкової процедури алгоритму
-        self.element.textComment.html(procedure.instructions[0].commentText);
+        self.dom_element.textComment.html(procedure.instructions[instruction_num].commentText);
         // Виведення першого аудио коментаря стосовно початкової процедури алгоритму
-        console.log(procedure.instructions[0].commentAudio);
-        self.updateAudio(procedure.instructions[0].commentAudio);
-        // self.element.audioComment.attr("src", procedure.instructions[0].commentAudio);
+        console.log(procedure.instructions[instruction_num].commentAudio);
+        self.updateAudio(procedure.instructions[instruction_num].commentAudio);
+        // self.dom_element.audioComment.attr("src", procedure.instructions[0].commentAudio);
     };
-    // Запуск анімації після завантаження елементів сторінки
-    app.start = function(){
-        var self = this;
-       console.log(this.procedures[0].instructions[0].function());
-        $("bst-structure root-bst").css({
-            "animation": "root_to_left_node_1_1 2s ease-in-out 0s forwards",
-        });
-    }
     // Ініціалізація створення списку процедур та вкладених в них інструкцій при завантаженні сторінки
     app.init = {
         start: function () {
-            var self = this;
+            var self = app;
             // Ініціалізація процедур застосунка
             $.when($.ajax("schema.xml" )
                 .done (function(xml){
@@ -62,21 +62,21 @@ function Instruction(code, commentText, commentAudio, functionDesc) {
                     var $procedure = $(xml).find("schema").find("procedure");
                     //
                     if ($procedure.length > 0) {
-                        self.parseProcedures($procedure);
+                        self.init.parse_procedures($procedure);
                     } else {
-                        app.critical_error_handler("Нема процедур!");
+                        self.error_handlers.critical_error_handler(app.alorithm_page_localization.find("no_procedures_found").text());
                     }
                     //
                 })
                 .fail(function(error) {
                     var msg = "ERR :: schema.xml is not found!";
-                    app.critical_error_handler(msg);
+                    app.error_handlers.critical_error_handler(msg);
                     throw new Error(msg);
                 })
             );
         },
         // Переведення всіх процедур до об'єкту app.procedures
-        initProcedureDisplay: function () {
+        init_procedure_to_be_displayed: function () {
             var self = this;
             var procedureList = "<ul>";
             for (var procedure in app.procedures) {
@@ -84,16 +84,16 @@ function Instruction(code, commentText, commentAudio, functionDesc) {
                     var currentProcedre = app.procedures[procedure];
                     // Виведення назви початкової процедури
                     $(".js_procedure_name").html(currentProcedre.name + currentProcedre.args);
-                    app.updatePseudocodeField(currentProcedre);
+                    app.update_pseudocode_field(currentProcedre, 0);
                 }
                 procedureList += "<li><span>"+ app.procedures[procedure].name +"</span></li>";
             }
             procedureList += "</ul>";
-            app.element.procedures.html(procedureList);
-            app.element.procedures.find("li:nth-child(1)").addClass("current");
+            app.dom_element.procedures.html(procedureList);
+            app.dom_element.procedures.find("li:nth-child(1)").addClass("current");
         },
         // Переведення процедури в активну, тобто поточна процедура буде виділятись зміною елементів інтерфейсу
-        makeProcedureCurrent: function(procedure){
+        make_procedure_to_be_current: function(procedure){
             var self = this;
             var procedureList = "<ul>";
             for (var procedure in app.procedures) {
@@ -101,17 +101,18 @@ function Instruction(code, commentText, commentAudio, functionDesc) {
                     var currentProcedre = app.procedures[procedure];
                     // Виведення назви початкової процедури
                     $(".js_procedure_name").html(currentProcedre.name + currentProcedre.args);
-                    app.updatePseudocodeField(currentProcedre);
+                    app.update_pseudocode_field(currentProcedre, 0);
+                    app.current_procedure.name = currentProcedre.name;
                 }
                 procedureList += "<li><span>"+ app.procedures[procedure].name +"</span></li>";
             }
             procedureList += "</ul>";
-            app.element.procedures.html(procedureList);
-            app.element.procedures.find("li:nth-child(1)").addClass("current");
+            app.dom_element.procedures.html(procedureList);
+            app.dom_element.procedures.find("li:nth-child(1)").addClass("current");
         },
         // Розбір кожної окремої процедури під час обробки файлу schema.xml,
         // в якій зберігається опис візуалізації алгоритму
-        parseProcedures: function ($procedure) {
+        parse_procedures: function ($procedure) {
             var self = this;
             $procedure.each(function () {
                 try {
@@ -132,13 +133,69 @@ function Instruction(code, commentText, commentAudio, functionDesc) {
                         app.procedures[app.procedures.length - 1].instructions.push(new Instruction(codePart, commentText, commentAudio, functionDesc));
                     });
                 } catch (error) {
-                    app.errorHandler("ERR :: " + error);
+                    app.error_handlers.error_handler_regular("ERR :: " + error);
                     throw new Error("ERR :: " + error);
                 }
             });
             // після завершення проходу по струтутрах процедур перехід до відображення початкової
             // процедури алгоритму
-            self.initProcedureDisplay();
+            self.init_procedure_to_be_displayed();
         }
+    };
+    // Ініціалізація властивостей елементів керування процесом запуску алгоритму
+    app.controls = {
+        // Запуск ініціалізації подій для елементів панелі керування
+        init: function() {
+            var self = app,
+                controls = app.controls;
+            // Кнопка СТАРТ
+            app.dom_elements.control_btn_start.on("click", function() {
+                controls.make_btn_active(app.dom_elements.control_btn_start);
+                controls.control_btn_start();
+            });
+            // Кнопка НАЗАД
+            app.dom_elements.control_btn_back.on("click", function() {
+                controls.make_btn_active(app.dom_elements.control_btn_back);
+                controls.control_btn_back();
+            });
+            // Кнопка ПАУЗА
+            app.dom_elements.control_btn_pause.on("click", function() {
+                controls.make_btn_active(app.dom_elements.control_btn_pause);
+                controls.control_btn_pause();
+            });
+            // Кнопка ВПЕРЕД
+            app.dom_elements.control_btn_forward.on("click", function() {
+                controls.make_btn_active(app.dom_elements.control_btn_forward);
+                controls.control_btn_forward();
+            });
+            // Кнопка СТОП
+            app.dom_elements.control_btn_stop.on("click", function() {
+                controls.make_btn_active(app.dom_elements.control_btn_stop);
+                controls.control_btn_stop();
+            });
+        },
+        make_btn_active: function(btn){
+            $("view_row control_btn").each(function(){
+                $(this).removeClass("active");
+            });
+            btn.addClass("active");
+        },
+        control_btn_start: function() {// Кнопка СТАРТ
+            var self = this;
+                $("bst-structure root-bst").css({
+                "animation": "root_to_left_node_1_1 2s ease-in-out 0s forwards",
+            });
+        },
+        control_btn_back: function() {// Кнопка НАЗАД
+
+        },
+        control_btn_pause: function() {// Кнопка ПАУЗА
+
+        },
+        control_btn_forward: function() {// Кнопка ВПЕРЕД
+
+        },
+        control_btn_stop: function() {}
+
     };
 })(window.app || {}, jQuery);

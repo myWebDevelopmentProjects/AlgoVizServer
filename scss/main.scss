@@ -15,6 +15,13 @@ body {
     .red {
         color: red;
     }
+    .grey {
+        color: #666666;
+    }
+    .blue {
+        color: #2e3e9a;
+
+    }
     .width_100_percent {
         width:100%;
     }
@@ -154,16 +161,16 @@ body {
                             left:20rem; top:40px;
                         }
                     }
-                    item {
+                    item-list {
                         position: relative;
                         animation-name: example;
                         animation-duration: 4s;
 
                     }
-                    item.init {
+                    item-list.init {
                       background: url(../images/svg/bst_item_init.svg);
                     }
-                    item.compare {
+                    item-list.compare {
                       background: url(../images/svg/bst_item_compare.svg);
                     }
 
@@ -324,6 +331,9 @@ body {
                     width: 10%;
                     height: 1rem; 
                 }
+            }
+            control_btn.active {
+                background: linear-gradient(#db8753, #b61520);
             }
         }
         view-footer {

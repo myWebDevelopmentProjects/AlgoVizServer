@@ -8,8 +8,10 @@
             <title_block class="width_100_percent"><arrow_down>&nbsp;</arrow_down><span>Додавання елемента до BST без балансування</span></title_block>
             <active_field>
             <p>Елементи:
-                <item class="init">0</item>
-                <item class="compare">1</item>
+                <items-wrapper>
+                    <item-list class="init">0</item-list>
+                    <item-list class="compare">1</item-list>
+                </items-wrapper>
             </p>
                 <bst-structure>
                     <bst-item  id="bst_item_0" class="_0" >0</bst-item>
@@ -48,8 +50,6 @@
                     <bst-item  id="bst_item_29" class="_4_15" >-</bst-item>
                     <bst-item  id="bst_item_30" class="_4_16" >-</bst-item>
 
-
-
                 </bst-structure>
             </active_field>
         </data_structure>
@@ -60,8 +60,6 @@
 
                 </active_field>
                 <audio class="audio-comment" controls>
-                    <source id="mp3_src" src="" type="audio/mpeg">
-                    <source id="ogg_src" src="" type="audio/ogg">
                     Браузер не підтримує програвання звукових файлів!
                 </audio>
             </comments_block>

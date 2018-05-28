@@ -3,8 +3,8 @@
     <procedure current="true" id="INSERT_BST" args="(Root, Object)">
         <instruction>
             <comment-text>1 Метод добавления нового элемента в BST-дерево</comment-text>
-            <comment-audio url="/audio/Matt Skyer - Our Galaxy.mp3"/>
-            <code><![CDATA[ New_Elem <- call new Node(Object) ]]></code>
+            <comment-audio url="audio/Matt Skyer - Our Galaxy.mp3"/>
+            <code><![CDATA[ <span class="grey">New_Elem</span> <- call new Node(Object) ]]></code>
             <function>
                 <![CDATA[
                 var  New_Elem = $("data_structure active_field item:nth-child(1)");

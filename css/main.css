@@ -12,6 +12,10 @@ body {
   font-size: 1em; }
   body .red {
     color: red; }
+  body .grey {
+    color: #666666; }
+  body .blue {
+    color: #2e3e9a; }
   body .width_100_percent {
     width: 100%; }
   body .current-instruction {
@@ -121,7 +125,7 @@ body {
       border-radius: .4rem;
       text-align: center;
       margin: .2rem; }
-    body content_view item {
+    body content_view item-list {
       display: inline-block;
       border: #666666 2px solid;
       padding: .4rem;
@@ -320,13 +324,13 @@ body {
   to {
     left: 20rem;
     top: 40px; } }
-          body content_view view_row data_structure active_field item {
+          body content_view view_row data_structure active_field item-list {
             position: relative;
             animation-name: example;
             animation-duration: 4s; }
-          body content_view view_row data_structure active_field item.init {
+          body content_view view_row data_structure active_field item-list.init {
             background: url(../images/svg/bst_item_init.svg); }
-          body content_view view_row data_structure active_field item.compare {
+          body content_view view_row data_structure active_field item-list.compare {
             background: url(../images/svg/bst_item_compare.svg); }
           body content_view view_row data_structure active_field bst-structure {
             display: block;
@@ -1068,6 +1072,8 @@ body {
         body content_view view_row control_btn start-control_icon {
           width: 10%;
           height: 1rem; }
+      body content_view view_row control_btn.active {
+        background: linear-gradient(#db8753, #b61520); }
     body content_view view-footer {
       display: block;
       font-size: .8rem; }

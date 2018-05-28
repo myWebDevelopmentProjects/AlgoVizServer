@@ -1,10 +1,10 @@
 (function (app, $) {
     //
-    app.element = {
+    app.dom_element = {
         pseudoCode: $("data_pseudocode active_field"),
         textComment: $("comments_block active_field"),
         procedures: $("procedures_block active_field"),
-        audio: $(".audio-comment"),
+        audio: $("audio.audio-comment"),
         error_msg: $(".js-error-msg"),
         modal_window: $("modal_window"),
         btn_close_modal: $("btn_close_modal"),

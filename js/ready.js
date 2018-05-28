@@ -1,4 +1,4 @@
 //
 $(document).ready(function () {
-    app.init_main_localization();
+    app.init_main();
 });
