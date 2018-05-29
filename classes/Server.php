@@ -12,7 +12,6 @@ class Server {
     public function __construct($url) {
         $this->config = simplexml_load_file(CONFIG_PATH) or die("Error: Cannot load config...");
         $this->algorithms_dir_path = $url;
-
     }
     
     public function initLinks() {

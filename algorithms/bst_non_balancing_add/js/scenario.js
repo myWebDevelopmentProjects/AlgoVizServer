@@ -1,17 +1,18 @@
 'use strict';
 // Об'єкт Procedure - описує складові для кожної процедури
 var Procedure = function (name, current, args) {
-    this.name = name;
-    this.current = current;
-    this.args = args;
-    this.instructions = [];
+    return {
+        current: current,
+        args: args,
+        instructions: []
+    }
 }
 // Об'єкт Instruction - описує складові для кожної іструкції
 function Instruction(code, commentText, commentAudio, functionDesc) {
     this.commentText = commentText;
     this.commentAudio = commentAudio;
     this.code = code;
-    this.function = function () { eval(functionDesc); };
+    this.function_instruction = functionDesc !== "empty" ? function () { eval(functionDesc); } : "empty";
 }
 // Об'єкт Node - описує вузол двійкового дерева
 function Node (value) {
@@ -24,12 +25,8 @@ function Node (value) {
 // опис анімації, який задано в файлі schema.xml
 (function (app, $) {
     // Всі процедури, які будуть застосовуватись для анімації на сторінці
-    app.procedures = [];
-    // Поточна процедурв
-    app.current_procedure = {
-        name: "",
-        instruction: 0
-    };
+    app.procedures = {};
+
     // Оновлення поля псевдокоду під час преходу між інструкціями
     app.update_pseudocode_field = function (procedure, instruction_num) {
         var self = this;
@@ -80,35 +77,20 @@ function Node (value) {
             var self = this;
             var procedureList = "<ul>";
             for (var procedure in app.procedures) {
+                var currentProcedre = app.procedures[procedure];
                 if (app.procedures[procedure].hasOwnProperty("current") && app.procedures[procedure].current === "true") {
-                    var currentProcedre = app.procedures[procedure];
                     // Виведення назви початкової процедури
-                    $(".js_procedure_name").html(currentProcedre.name + currentProcedre.args);
+                    $(".js_procedure_name").html(procedure + currentProcedre.args);
+                    app.animation.current_procedure.name = procedure;
                     app.update_pseudocode_field(currentProcedre, 0);
+                    procedureList += "<li class=\"current\"><span>"+ procedure +"</span></li>";
+                } else {
+                    procedureList += "<li><span>"+ procedure +"</span></li>";
                 }
-                procedureList += "<li><span>"+ app.procedures[procedure].name +"</span></li>";
+                procedureList += "</span></li>";
             }
             procedureList += "</ul>";
             app.dom_element.procedures.html(procedureList);
-            app.dom_element.procedures.find("li:nth-child(1)").addClass("current");
-        },
-        // Переведення процедури в активну, тобто поточна процедура буде виділятись зміною елементів інтерфейсу
-        make_procedure_to_be_current: function(procedure){
-            var self = this;
-            var procedureList = "<ul>";
-            for (var procedure in app.procedures) {
-                if (app.procedures[procedure].hasOwnProperty("current") && app.procedures[procedure].current === "true") {
-                    var currentProcedre = app.procedures[procedure];
-                    // Виведення назви початкової процедури
-                    $(".js_procedure_name").html(currentProcedre.name + currentProcedre.args);
-                    app.update_pseudocode_field(currentProcedre, 0);
-                    app.current_procedure.name = currentProcedre.name;
-                }
-                procedureList += "<li><span>"+ app.procedures[procedure].name +"</span></li>";
-            }
-            procedureList += "</ul>";
-            app.dom_element.procedures.html(procedureList);
-            app.dom_element.procedures.find("li:nth-child(1)").addClass("current");
         },
         // Розбір кожної окремої процедури під час обробки файлу schema.xml,
         // в якій зберігається опис візуалізації алгоритму
@@ -120,17 +102,16 @@ function Node (value) {
                     var id = typeof $(this).attr("id") !== "undefined" ? $(this).attr("id") : "empty";
                     var current = typeof $(this).attr("current") !== "undefined" ? $(this).attr("current") : "empty";
                     var args = typeof $(this).attr("args") !== "undefined" ? $(this).attr("args") : "empty";
-                    var procedure = new Procedure(id, current, args);
                     // додавання нової процедури до алгоритму
-                    app.procedures.push(procedure); 
+                    app.procedures[id] = new Procedure(id, current, args);
                     //
                     var $instructions = $(this).find("instruction");
                     $instructions.each(function(){
                         var commentText = typeof $(this).find("comment-text") !== "undefined" ? $(this).find("comment-text").text() : "empty";
                         var commentAudio = typeof $(this).find("comment-audio").attr("url") !== "undefined" ? $(this).find("comment-audio").attr("url") : "empty";
                         var codePart = typeof $(this).find("code") ? $(this).find("code").text() : "empty";
-                        var functionDesc = typeof $(this).find("code") ? $(this).find("function").text() : "empty";
-                        app.procedures[app.procedures.length - 1].instructions.push(new Instruction(codePart, commentText, commentAudio, functionDesc));
+                        var functionDesc = typeof $(this).find("code") ? $(this).find("function-instruction").text() : "empty";
+                        app.procedures[id].instructions.push(new Instruction(codePart, commentText, commentAudio, functionDesc));
                     });
                 } catch (error) {
                     app.error_handlers.error_handler_regular("ERR :: " + error);
@@ -141,6 +122,27 @@ function Node (value) {
             // процедури алгоритму
             self.init_procedure_to_be_displayed();
         }
+    };
+
+    var playAnimation = setInterval(function(){
+            app.animation.current_procedure.instruction++;
+            try {
+                app.procedures[app.animation.current_procedure.name].instructions[app.animation.current_procedure.instruction].function_instruction();
+            } catch(e) {
+                var msg = "ERR :: no function for current instruction is found!";
+                app.error_handlers.critical_error_handler(msg);
+                clearInterval(this);
+                throw new Error(msg);
+            }
+        }, 2000);
+    // Запуск фнфмації при кліку на кнопку СТАРТ
+    app.animation = {
+        // Поточна процедурв
+        current_procedure: {
+            name: "",
+            instruction: 0
+        }
+
     };
     // Ініціалізація властивостей елементів керування процесом запуску алгоритму
     app.controls = {
@@ -181,10 +183,13 @@ function Node (value) {
             btn.addClass("active");
         },
         control_btn_start: function() {// Кнопка СТАРТ
-            var self = this;
+            var self = app;
                 $("bst-structure root-bst").css({
                 "animation": "root_to_left_node_1_1 2s ease-in-out 0s forwards",
             });
+                console.log(app.procedures);
+            app.procedures[app.animation.current_procedure.name].instructions[app.animation.current_procedure.instruction].function_instruction();
+            playAnimation();
         },
         control_btn_back: function() {// Кнопка НАЗАД
 

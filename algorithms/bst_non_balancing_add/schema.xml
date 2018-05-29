@@ -5,20 +5,29 @@
             <comment-text>1 Метод добавления нового элемента в BST-дерево</comment-text>
             <comment-audio url="audio/Matt Skyer - Our Galaxy.mp3"/>
             <code><![CDATA[ <span class="grey">New_Elem</span> <- call new Node(Object) ]]></code>
-            <function>
+            <function-instruction>
                 <![CDATA[
-                var  New_Elem = $("data_structure active_field item:nth-child(1)");
+                var  New_Elem = $("data_structure items-wrapper item-list:nth-child(1)");
                 var BST = $("bst-structure");
                 console.log("New_Elem as Root", New_Elem.html());
                 BST.find("._0").html(New_Elem.html()).show();
                 New_Elem.hide();
                 ]]>
-            </function>
+            </function-instruction>
         </instruction>
         <instruction>
             <comment-text>2 Метод добавления нового элемента в BST-дерево</comment-text>
             <comment-audio url=""/>
             <code><![CDATA[ Root <- call Insert_Node(Root, New_Elem) ]]></code>
+            <function-instruction>
+                <![CDATA[
+                var  New_Elem = $("data_structure active_field item:nth-child(1)");
+                var BST = $("bst-structure");
+                console.log("New_Elem as Root", New_Elem.html());
+                BST.find("._1_1").html(New_Elem.html()).show();
+                New_Elem.hide();
+                ]]>
+            </function-instruction>
         </instruction>
     </procedure>
     <procedure current="false" id="INSERT_NODE" args="(Current,  New_Elem)">
