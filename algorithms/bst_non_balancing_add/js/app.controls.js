@@ -44,7 +44,10 @@
             });
             console.log(app.procedures);
             app.procedures[app.animation.current_procedure.name].instructions[app.animation.current_procedure.instruction].function_instruction();
-            playAnimation();
+            app.animation.playAnimation = setInterval(function(){
+                app.animation.start();
+            }, 2000)
+
         },
         control_btn_back: function() {// Кнопка НАЗАД
 

@@ -123,18 +123,4 @@ function Node (value) {
             self.init_procedure_to_be_displayed();
         }
     };
-
-    var playAnimation = setInterval(function(){
-            app.animation.current_procedure.instruction++;
-            try {
-                app.procedures[app.animation.current_procedure.name].instructions[app.animation.current_procedure.instruction].function_instruction();
-            } catch(e) {
-                var msg = "ERR :: no function for current instruction is found!";
-                app.error_handlers.critical_error_handler(msg);
-                clearInterval(this);
-                throw new Error(msg);
-            }
-        }, 2000);
-
-
 })(window.app || {}, jQuery);
