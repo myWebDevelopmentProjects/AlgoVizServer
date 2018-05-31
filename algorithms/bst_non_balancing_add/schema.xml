@@ -5,7 +5,7 @@
             <comment-text>1 Метод добавления нового элемента в BST-дерево</comment-text>
             <comment-audio url="audio/Matt Skyer - Our Galaxy.mp3"/>
             <code><![CDATA[ <span class="grey">New_Elem</span> <- call new Node(Object) ]]></code>
-            <function-instruction>
+            <function-instruction call="javascript:get_new_elem">
                 <![CDATA[
                 var  New_Elem = $("data_structure items-wrapper item-list:nth-child(1)");
                 var BST = $("bst-structure");

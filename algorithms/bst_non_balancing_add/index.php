@@ -95,6 +95,8 @@
     ?>
 </content_view>
 <script src="js/app.dom_elements.js" defer></script>
+<script src="js/app.animation.js" defer></script>
+<script src="js/app.controls.js" defer></script>
 <script src="js/app.init_localization.js" defer></script>
 <script src="js/scenario.js" defer></script>
 <script src="js/ready.js" defer></script>
