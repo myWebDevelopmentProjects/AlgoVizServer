@@ -8,4 +8,6 @@
         <procedures_confirmed><![CDATA[ Процедури знайдено!  ]]></procedures_confirmed>
     </success>
     <copy_block><![CDATA[ AlgoViz - візуалізація алгоритмів ]]></copy_block>
+    <no_function_for_procedure><![CDATA[ Не знайдено опису функції для даної процедури ]]></no_function_for_procedure>
+    <procedure_name><![CDATA[ Ім'я процедури ]]></procedure_name>
 </localization_main>

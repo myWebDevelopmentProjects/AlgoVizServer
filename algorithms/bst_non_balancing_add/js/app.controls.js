@@ -43,7 +43,7 @@
                 "animation": "root_to_left_node_1_1 2s ease-in-out 0s forwards",
             });
             console.log(app.procedures);
-            app.procedures[app.animation.current_procedure.name].instructions[app.animation.current_procedure.instruction].function_instruction();
+            app.procedures[app.animation.current_procedure.name].instructions[app.animation.current_procedure.instruction].action();
             app.animation.playAnimation = setInterval(function(){
                 app.animation.start();
             }, 2000)

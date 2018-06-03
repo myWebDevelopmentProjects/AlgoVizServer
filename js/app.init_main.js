@@ -1,10 +1,13 @@
 (function (app, $) {
+    // Ою'єкт, де бдуть зберігатись всі мовні налаштування
+    app.localization_main = {};
+    // Ыныцыалызацыя мовних налаштувань загальних для всых шаблоныв
     app.init_main = function(){
         // Ініціалізація мовних налаштувань
         $.when($.ajax("../../localization_main.xml")
             .done (function(xml){
                 console.log("DATA", xml);
-                $localization_main = $(xml).find("localization-main");
+                app.localization_main = $(xml).find("localization-main");
                 app.dom_element.copy_block.html($(xml).find("copy_block").text());
                 // Якщо початково список елементів для додавання у структуру порожній
                 if ( app.arrItems.length > 0 ) {

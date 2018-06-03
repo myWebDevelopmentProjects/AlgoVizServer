@@ -4,9 +4,9 @@
         $.when($.ajax("localization.xml" )
             .done (function(xml){
                 console.log("DATA", xml);
-                $localization_main = $(xml).find("localization");
-                app.dom_elements.title_block.html($localization_main.find("index").find("title_block").text());
-                app.dom_elements.content_of_page.html($localization_main.find("index").find("content_of_page").text());
+                app.localization_page = $(xml).find("localization");
+                app.dom_elements.title_block.html(app.localization_page.find("index").find("title_block").text());
+                app.dom_elements.content_of_page.html(app.localization_page.find("index").find("content_of_page").text());
             })
             .fail(function(error) {
                 var msg = "ERR :: \"localization.xml\" is not found!";

@@ -2,7 +2,7 @@
 var playAnimation = setInterval(function(){
     app.animation.current_procedure.instruction++;
     try {
-        app.procedures[app.animation.current_procedure.name].instructions[app.animation.current_procedure.instruction].function_instruction();
+        app.procedures[app.animation.current_procedure.name].instructions[app.animation.current_procedure.instruction].action();
     } catch(e) {
         var msg = "ERR :: no function for current instruction is found!";
         app.error_handlers.critical_error_handler(msg);
@@ -26,9 +26,9 @@ var playAnimation = setInterval(function(){
         start: function(){
             app.animation.current_procedure.instruction++;
             try {
-                app.procedures[app.animation.current_procedure.name].instructions[app.animation.current_procedure.instruction].function_instruction();
+                app.procedures[app.animation.current_procedure.name].instructions[app.animation.current_procedure.instruction].action();
             } catch(e) {
-                var msg = "ERR :: no function for current instruction is found!";
+                var msg = app.localization_main.find("no_function_for_procedure").text();
                 app.error_handlers.critical_error_handler(msg);
                 clearInterval(app.animation.playAnimation);
                 throw new Error(msg);

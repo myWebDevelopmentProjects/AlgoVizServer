@@ -12,7 +12,7 @@ function Instruction(code, commentText, commentAudio, functionDesc) {
     this.commentText = commentText;
     this.commentAudio = commentAudio;
     this.code = code;
-    this.function_instruction = functionDesc !== "empty" ? function () { eval(functionDesc); } : "empty";
+    this.action = functionDesc !== "empty" ? function () { eval(functionDesc); } : "empty";
 }
 // Об'єкт Node - описує вузол двійкового дерева
 function Node (value) {
@@ -110,7 +110,7 @@ function Node (value) {
                         var commentText = typeof $(this).find("comment-text") !== "undefined" ? $(this).find("comment-text").text() : "empty";
                         var commentAudio = typeof $(this).find("comment-audio").attr("url") !== "undefined" ? $(this).find("comment-audio").attr("url") : "empty";
                         var codePart = typeof $(this).find("code") ? $(this).find("code").text() : "empty";
-                        var functionDesc = typeof $(this).find("code") ? $(this).find("function-instruction").text() : "empty";
+                        var functionDesc = typeof $(this).find("code") ? $(this).find("action").text() : "empty";
                         app.procedures[id].instructions.push(new Instruction(codePart, commentText, commentAudio, functionDesc));
                     });
                 } catch (error) {
